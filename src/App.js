@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/header/Navbar";
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
+      <Footer />
     </main>
   );
 }
