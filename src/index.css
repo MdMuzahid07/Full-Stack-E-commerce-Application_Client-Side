@@ -16,9 +16,22 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(215, 215, 215);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 89, 108);
 }

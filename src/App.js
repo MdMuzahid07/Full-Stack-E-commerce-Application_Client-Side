@@ -1,9 +1,26 @@
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/header/Navbar";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Home from "./pages/home/Home";
+import Login from "./pages/loginSignup/Login";
+import SignUp from "./pages/loginSignup/SignUp";
+import Store from "./pages/store/Store";
 
 function App() {
   return (
     <main className="max-w-screen-xl mx-auto">
-      <Home />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Store />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
+      </Routes>
     </main>
   );
 }
