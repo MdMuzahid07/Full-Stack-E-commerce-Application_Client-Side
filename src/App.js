@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/header/Navbar";
 import About from "./pages/about/About";
+import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Home from "./pages/home/Home";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shop" element={<Store />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
