@@ -105,7 +105,7 @@ const Footer = () => {
                         <span>&#169; Copyright 2022, All Right Reserved  By Kino</span>
                     </div>
                     <div className="flex justify-end">
-                        <img style={{ marginTop: "-10px", width: "120px" }} className="border border-indigo-300 rounded-xl px-3" src="https://i.ibb.co/kJ23tcV/Stripe-logo.png" alt="" />
+                        <img style={{ marginTop: "-10px", width: "120px" }} className="border border-indigo-300 rounded px-3" src="https://i.ibb.co/kJ23tcV/Stripe-logo.png" alt="" />
                     </div>
                 </footer>
             </div>

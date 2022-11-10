@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <section className="px-3 md:px-0">
+        <section className="px-3 md:px-0 min-h-screen">
             <h2>homepage</h2>
         </section>
     );
