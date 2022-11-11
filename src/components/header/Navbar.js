@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <header className="px-3 md:px-0 sticky top-0">
+        <header className="px-3 md:px-0 sticky top-0 z-50">
             <div className="navbar bg-white  border drop-shadow rounded-b-xl">
                 <div className="navbar-start">
                     <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold">Kino</Link>
