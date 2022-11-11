@@ -14,35 +14,9 @@ const Header = () => {
         speed: 2000,
         autoplaySpeed: 3000,
         cssEase: "linear",
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
     };
     return (
-        <section className="bg-warning rounded-xl p-5 md:px-16 my-7">
+        <section className="bg-warning rounded-xl p-5 md:p-20 my-7">
             <Slider arrows={false} {...settings}>
                 <div>
                     <div className="flex justify-between items-center">

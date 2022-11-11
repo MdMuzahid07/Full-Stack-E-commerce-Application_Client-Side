@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="mt-10 px-3 md:px-0  py-10">
+        <footer className="mt-10 px-3 lg:px-0  py-10">
             <div className="border rounded-xl p-5 md:p-10">
-                <div className="grid gap-4 md:grid-cols-4">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                     <div>
                         <div className="flex align-end">
                             <img className="w-14" src="https://i.ibb.co/9pZSYw3/delivery.jpg" alt="handover_delivery" />
