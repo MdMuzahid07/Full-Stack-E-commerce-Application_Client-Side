@@ -2,6 +2,7 @@ import React from 'react';
 import ThumbnailAirPodMax from './airpodMaxThumbnail/ThumbnailAirPodMax';
 import Categories from './categories/Categories';
 import Header from './header/Header';
+import ShowcaseProducts from './showcaseProducts/ShowcaseProducts';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Header />
             <Categories />
             <ThumbnailAirPodMax />
+            <ShowcaseProducts />
         </section>
     );
 };
