@@ -19,9 +19,8 @@ body {
   overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ThumbnailAirPodMax_Image {
+  margin-top: -150px
 }
 
 ::-webkit-scrollbar {
@@ -34,4 +33,16 @@ code {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(85, 89, 108);
+}
+
+@media screen and (max-width: 900px) {
+  .ThumbnailAirPodMax_Image {
+    margin-top: 0px
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ThumbnailAirPodMax_Image {
+    margin-top: 50px
+  }
 }
