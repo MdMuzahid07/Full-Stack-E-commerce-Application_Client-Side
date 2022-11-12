@@ -1,9 +1,11 @@
 import React from 'react';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 import CartCard from './CartCard';
 
 const Cart = () => {
     return (
         <section className="px-3 lg:px-0">
+            <HelmetTitle>Cart</HelmetTitle>
             <div className="grid md:grid-cols-2 gap-4 my-10">
                 <div>
                     <CartCard />

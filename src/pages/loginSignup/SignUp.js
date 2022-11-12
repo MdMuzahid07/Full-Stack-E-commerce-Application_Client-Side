@@ -1,10 +1,11 @@
 import React from 'react';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 
 const SignUp = () => {
     return (
-        <div>
-            sign up
-        </div>
+        <section>
+            <HelmetTitle>SignUp</HelmetTitle>
+        </section>
     );
 };
 

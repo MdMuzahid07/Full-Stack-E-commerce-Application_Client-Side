@@ -1,10 +1,12 @@
 import React from 'react';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 
 const Login = () => {
     return (
-        <div>
+        <section>
+            <HelmetTitle>Login</HelmetTitle>
             login
-        </div>
+        </section>
     );
 };
 

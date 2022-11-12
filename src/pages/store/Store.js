@@ -1,10 +1,13 @@
 import React from 'react';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 
 const Store = () => {
     return (
-        <div>
+        <section>
+            <HelmetTitle>Shop</HelmetTitle>
+
             store
-        </div>
+        </section>
     );
 };
 

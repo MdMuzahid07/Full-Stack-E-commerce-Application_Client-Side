@@ -1,8 +1,10 @@
 import React from 'react';
+import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
 const ProductDetails = () => {
     return (
         <section className="px-3 lg:px-0">
+            <HelmetTitle>ProductDetails</HelmetTitle>
 
             <div className="grid md:grid-cols-2 gap-4 my-10">
 
