@@ -3,9 +3,9 @@ import React from 'react';
 const FunFact = () => {
     return (
         <div className="grid md:grid-cols-3 gap-4 my-32">
-            <div className="border hover:border-warning rounded-xl p-10 mx-auto">
+            <div className="border hover:border-warning rounded-xl p-10">
                 <img className="w-24 mx-auto mb-7 rounded-full" src="https://i.ibb.co/YBfLRyd/customers.png" alt="" />
-                <div className="text-xl font-bold capitalize">
+                <div className="text-xl text-center font-bold capitalize">
                     more than 2.2 billion customers
                 </div>
             </div>
