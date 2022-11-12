@@ -23,6 +23,13 @@ body {
   margin-top: -150px
 }
 
+.homePageFooterBgImg {
+  background-image: url("https://i.ibb.co/9cp3yHz/apple-product.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
