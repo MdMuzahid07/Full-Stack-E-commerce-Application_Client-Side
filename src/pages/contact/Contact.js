@@ -1,10 +1,15 @@
 import React from 'react';
+import Banner from './Banner';
+import ContactForm from './ContactForm';
+import GoogleMap from './GoogleMap';
 
 const Contact = () => {
     return (
-        <div>
-            contact
-        </div>
+        <section className="px-3 lg:px-0">
+            <Banner />
+            <ContactForm />
+            <GoogleMap />
+        </section>
     );
 };
 
