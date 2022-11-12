@@ -1,10 +1,13 @@
 import React from 'react';
+import NewsLetterSubscribe from '../../components/newsletter/NewsLetterSubscribe';
+import Banner from './Banner';
 
 const About = () => {
     return (
-        <div>
-            about
-        </div>
+        <section className="px-3 lg:px-0">
+            <Banner />
+            <NewsLetterSubscribe />
+        </section>
     );
 };
 

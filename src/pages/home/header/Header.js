@@ -19,7 +19,7 @@ const Header = () => {
         <section className="bg-warning rounded-xl p-5 md:p-20 my-7">
             <Slider arrows={false} {...settings}>
                 <div>
-                    <div className="flex justify-between items-center">
+                    <div className="md:flex justify-between items-center">
                         <div>
                             <p className="mb-3 font-bold">Black friday</p>
                             <h2 className="text-2xl md:text-5xl font-bold text-white">Electronic</h2>
@@ -33,7 +33,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <div className="flex justify-between items-center">
+                    <div className="md:flex justify-between items-center">
                         <div>
                             <p className="mb-3 font-bold">Best selling</p>
                             <h2 className="text-2xl md:text-5xl font-bold text-white">Apple</h2>
@@ -47,7 +47,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <div className="flex justify-between items-center">
+                    <div className="md:flex justify-between items-center">
                         <div>
                             <p className="mb-3 font-bold">This week only</p>
                             <h2 className="text-2xl md:text-5xl font-bold text-white">Up sale to</h2>

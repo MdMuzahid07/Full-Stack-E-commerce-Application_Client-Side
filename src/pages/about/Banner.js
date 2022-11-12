@@ -13,10 +13,10 @@ const Banner = () => {
                             </Link>
                         </div>
                         <div>
-                            <p className="text-xl font-bold text-warning">Contact</p>
+                            <p className="text-xl font-bold text-warning">About</p>
                         </div>
                     </div>
-                    <div className="text-3xl mt-3">Contact With Us</div>
+                    <div className="text-3xl mt-3">About Our Brand</div>
                 </div>
                 <div className="mt-10 md:mt-0">
                     <img className="w-44" src="https://i.ibb.co/B6G75SH/apple-siri-home.png" alt="" />
