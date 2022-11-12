@@ -11,7 +11,7 @@ const NewsLetterSubscribe = () => {
                     <div className="text-xl md:text-3xl text-warning font-bold mt-3 mb-7">Get weekly update</div>
                     <div className="flex align-center">
                         <input type="email" placeholder="Your email address" className="input input-bordered input-warning w-full max-w-xs rounded-full" />
-                        <button className="btn btn-outline btn-warning rounded-full ml-3">Subscribe</button>
+                        <button className="btn btn-warning rounded-full ml-3">Subscribe</button>
                     </div>
                 </div>
             </div>

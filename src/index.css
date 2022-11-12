@@ -24,10 +24,11 @@ body {
 }
 
 .homePageFooterBgImg {
-  background-image: url("https://i.ibb.co/9cp3yHz/apple-product.png");
+  background-image: url("https://i.ibb.co/4dqYz4r/Apple-Store.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
+  border-radius: 0.75rem;
 }
 
 ::-webkit-scrollbar {
