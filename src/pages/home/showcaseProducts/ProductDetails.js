@@ -41,6 +41,11 @@ const ProductDetails = () => {
                                 Blue                            </div>
                         </div>
                     </div>
+                    <div className="mt-10">
+                        <button className="btn btn-wide rounded-full"><span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>Add Cart</button>
+                    </div>
                 </div>
 
             </div>
