@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/header/Navbar";
+import ReactToastifyContainer from "./components/reactToastContainer/ReactToastifyContainer";
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
       <Footer />
+      <ReactToastifyContainer />
     </main>
   );
 }
