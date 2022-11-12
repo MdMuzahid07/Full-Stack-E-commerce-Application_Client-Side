@@ -3,14 +3,19 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="my-10">
-            <div className="grid md:grid-cols-2 gap-4">
-                <div className="border rounded-xl p-5">
+            {/* <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white flex justify-between align-center border rounded-xl p-5">
+                    <div>
+                        <img src="" alt="" />
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div className="bg-white border rounded-xl p-5">
 
                 </div>
-                <div className="border rounded-xl p-5">
-
-                </div>
-            </div>
+            </div> */}
 
             <div className="bg-slate-100 rounded-xl mt-4">
                 <div className="homePageFooterBgImg flex justify-between align-center gap-4">
