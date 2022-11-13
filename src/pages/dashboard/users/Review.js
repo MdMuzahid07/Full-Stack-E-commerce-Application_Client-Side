@@ -8,8 +8,8 @@ const Review = () => {
             <h2 className="text-3xl font-bold">Give a review</h2>
             <hr className="mt-5 mb-7" />
             <div className="bg-white border rounded-xl my-20">
-                <div className="grid md:grid-cols-2">
-                    <div className="border-r p-10">
+                <div>
+                    <div className="p-10">
                         <div className="avatar -mt-16">
                             <div className="w-32 border rounded-full">
                                 <img src="https://placeimg.com/192/192/people" alt="profile_img " />
@@ -20,7 +20,7 @@ const Review = () => {
                     </div>
                     <div className="p-7">
                         <form action="">
-                            <textarea className="textarea textarea-bordered w-full" placeholder="What do you think about our service"></textarea>
+                            <textarea rows="5" className="textarea textarea-bordered w-full" placeholder="What do you think about our service"></textarea>
                             <div className="rating mt-3 block">
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" checked />
