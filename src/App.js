@@ -6,6 +6,7 @@ import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import Dashboard from "./pages/dashboard/Dashboard";
+import ErrorPage from "./pages/errorPage/ErrorPage";
 import Home from "./pages/home/Home";
 import ProductDetails from "./pages/home/showcaseProducts/ProductDetails";
 import Login from "./pages/loginSignup/Login";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer />
       <ReactToastifyContainer />
