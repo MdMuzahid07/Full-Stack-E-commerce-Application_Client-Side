@@ -25,22 +25,18 @@ const ProductDetails = () => {
                     </div>
 
                     <div className="mt-10">
-                        <div className="font-bold text-warning mb-3">Choose Color</div>
-                        <div className="grid md:grid-cols-4 gap-4">
-                            <div className="border rounded-xl p-5">
-                                Red
+                        <div className="text-xl font-bold mb-3">Choose Color</div>
+                        <div className="flex gap-2 md:gap-4 text-white">
+                            <div className="bg-red-500 border rounded-full p-5">
                             </div>
-                            <div className="border rounded-xl p-5">
-                                Black
+                            <div className="bg-black border rounded-full p-5">
                             </div>
-                            <div className="border rounded-xl p-5">
-                                Pink
+                            <div className="bg-pink-500 border rounded-full p-5">
                             </div>
-                            <div className="border rounded-xl p-5">
-                                Yellow
+                            <div className="bg-yellow-500 border rounded-full p-5">
                             </div>
-                            <div className="border rounded-xl p-5">
-                                Blue                            </div>
+                            <div className="bg-blue-500 border rounded-full p-5">
+                            </div>
                         </div>
                     </div>
                     <div className="mt-10">

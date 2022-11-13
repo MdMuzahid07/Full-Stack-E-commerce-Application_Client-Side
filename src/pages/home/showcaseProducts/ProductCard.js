@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = () => {
+    const navigate = useNavigate();
+
+    const handleProductDetails = () => {
+        navigate("/productDetails");
+    };
+
     return (
         <section className="card card-compact">
             <figure className="bg-white border border-2 hover:border-warning rounded-xl"><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
@@ -18,7 +25,7 @@ const ProductCard = () => {
                             favorite
                         </span>
                     </button>
-                    <button className="btn btn-outline btn-warning btn-circle">
+                    <button onClick={handleProductDetails} className="btn btn-outline btn-warning btn-circle">
                         <span class="material-symbols-outlined text-black">
                             visibility
                         </span>
