@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 
 const MyProfile = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -15,6 +16,7 @@ const MyProfile = () => {
 
     return (
         <div className="mx-auto my-7">
+            <HelmetTitle>My Profile</HelmetTitle>
             <h2 className="text-3xl font-bold">My Profile</h2>
             <hr className="mt-5 mb-20" />
             <div className="md:flex gap-5">
@@ -41,7 +43,7 @@ const MyProfile = () => {
                 <div className="card card-compact bg-white w-full border rounded-xl my-7 md:my-0">
                     <div className="card-body">
 
-                        <h2 className="text-3xl font-bold mt-7">Update your profile</h2>
+                        <h2 className="text-2xl font-bold mt-7">Update your profile</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="grid md:grid-cols-2 gap-4">

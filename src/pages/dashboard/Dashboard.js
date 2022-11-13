@@ -6,10 +6,10 @@ const Dashboard = () => {
     return (
         <section className="bg-white px-3 lg:px-0">
             <HelmetTitle>Dashboard</HelmetTitle>
-            <div className="drawer drawer-mobile border rounded-xl my-10">
+            <div className="drawer drawer-mobile border rounded-xl my-10 min-h-screen">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer-2" className="btn btn-circle btn-outline bg-white drawer-button lg:hidden m-5 sticky top-5 left-5 z-50"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <label htmlFor="my-drawer-2" className="btn btn-outline rounded-xl bg-white drawer-button lg:hidden m-5 sticky top-5 left-5 z-50"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>
                     <div className="bg-white md:my-5 mx-5 rounded-xl p-5">
                         <Outlet />
