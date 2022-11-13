@@ -19,6 +19,7 @@ import ProductDetails from "./pages/home/showcaseProducts/ProductDetails";
 import Login from "./pages/loginSignup/Login";
 import SignUp from "./pages/loginSignup/SignUp";
 import Store from "./pages/store/Store";
+import RequireAuth from "./requireauth/RequireAuth";
 
 function App() {
   return (
@@ -36,7 +37,11 @@ function App() {
         <Route path="/*" element={<ErrorPage />} />
 
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }>
           <Route path="myProfile" element={<MyProfile />} />
           <Route path="myOrders" element={<MyOrders />} />
           <Route path="review" element={<Review />} />
