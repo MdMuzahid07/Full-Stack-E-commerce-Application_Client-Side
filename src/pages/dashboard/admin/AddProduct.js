@@ -50,9 +50,25 @@ const AddProduct = () => {
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <input {...register("minimumOrder")} type="number" placeholder="Minimum order" className="input input-bordered w-full rounded-xl" />
-
                                 <input {...register("for")} type="text" placeholder="Where you want showcase the product" className="input input-bordered w-full rounded-xl" />
                             </div>
+
+                            <div className="grid md:grid-cols-2 gap-4 my-4">
+                                <input {...register("feature1")} type="text" placeholder="feature1" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("feature2")} type="text" placeholder="feature2" className="input input-bordered w-full rounded-xl" />
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-4 my-4">
+                                <input {...register("feature3")} type="text" placeholder="feature3" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("feature4")} type="text" placeholder="feature4" className="input input-bordered w-full rounded-xl" />
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-4 my-4">
+                                <input {...register("feature5")} type="text" placeholder="feature5" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("feature6")} type="text" placeholder="feature6" className="input input-bordered w-full rounded-xl" />
+                            </div>
+
+                            <input {...register("feature67")} type="text" placeholder="feature7" className="input input-bordered w-full rounded-xl" />
 
                             <div className="grid md:grid-cols-2 gap-4 my-4">
                                 <div>

@@ -4,7 +4,7 @@ import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 const MyOrders = () => {
     return (
         <div className="my-10">
-            <HelmetTitle>My Order</HelmetTitle>
+            <HelmetTitle>My Orders</HelmetTitle>
             <h2 className="text-3xl font-bold">My Orders</h2>
             <hr className="mt-5 mb-10" />
 
