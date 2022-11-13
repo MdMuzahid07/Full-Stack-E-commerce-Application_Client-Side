@@ -1,9 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 import SocialLogin from './SocialLogin';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const handleEmailLogin = (e) => {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                if (user) {
+                    navigate("/");
+                    toast.success("Welcome to Kino");
+                }
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
+    };
+
     return (
         <section className="px-3 lg:px-0">
             <HelmetTitle>Login</HelmetTitle>
@@ -11,9 +36,9 @@ const Login = () => {
                 <div className="bg-white border rounded-xl p-10">
                     <p className="text-2xl font-bold">Login</p>
                     <div className="mt-10">
-                        <form action="" style={{ maxWidth: "400px" }}>
-                            <input type="text" placeholder="Your Email Address" className="input input-bordered w-full mb-5 rounded-full" />
-                            <input type="text" placeholder="Your Password" className="input input-bordered w-full mb-5 rounded-full" />
+                        <form onSubmit={handleEmailLogin} style={{ maxWidth: "400px" }}>
+                            <input type="email" name="email" placeholder="Your Email Address" className="input input-bordered w-full mb-5 rounded-full" />
+                            <input type="password" name="password" placeholder="Your Password" className="input input-bordered w-full mb-5 rounded-full" />
                             <input type="submit" value="Login" className="btn rounded-full mb-5" />
                         </form>
                         <div className="mb-7">
