@@ -65,8 +65,11 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M11.875 21v-1.5H18.6q.1 0 .2-.1t.1-.2V5.3q0-.1-.1-.2t-.2-.1h-6.725V3.5H18.6q.75 0 1.275.525.525.525.525 1.275v13.9q0 .75-.525 1.275Q19.35 21 18.6 21Zm-1.25-4.475-1.05-1.1L12 13H3.6v-1.5H12L9.575 9.075l1.05-1.1 4.25 4.275Z" /></svg>
-                                    Login
+                                    <Link to="/login">
+                                        <div className="flex">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M11.875 21v-1.5H18.6q.1 0 .2-.1t.1-.2V5.3q0-.1-.1-.2t-.2-.1h-6.725V3.5H18.6q.75 0 1.275.525.525.525.525 1.275v13.9q0 .75-.525 1.275Q19.35 21 18.6 21Zm-1.25-4.475-1.05-1.1L12 13H3.6v-1.5H12L9.575 9.075l1.05-1.1 4.25 4.275Z" /></svg><span className="ml-3">Login</span>
+                                        </div>
+                                    </Link>
                                 </span>
                             </li>
                             <li>
@@ -85,7 +88,7 @@ const Navbar = () => {
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-lg w-52  drop-shadow">
                             <li>
