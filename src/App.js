@@ -5,7 +5,14 @@ import ReactToastifyContainer from "./components/reactToastContainer/ReactToasti
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
+import AddProduct from "./pages/dashboard/admin/AddProduct";
+import ManageOrders from "./pages/dashboard/admin/ManageOrders";
+import ManageProducts from "./pages/dashboard/admin/ManageProducts";
+import ManageUsers from "./pages/dashboard/admin/ManageUsers";
 import Dashboard from "./pages/dashboard/Dashboard";
+import MyProfile from "./pages/dashboard/MyProfile";
+import MyOrders from "./pages/dashboard/users/MyOrders";
+import Review from "./pages/dashboard/users/Review";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import Home from "./pages/home/Home";
 import ProductDetails from "./pages/home/showcaseProducts/ProductDetails";
@@ -24,10 +31,20 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/*" element={<ErrorPage />} />
+
+        {/* dashboard routes */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="myProfile" element={<MyProfile />} />
+          <Route path="myOrders" element={<MyOrders />} />
+          <Route path="review" element={<Review />} />
+          <Route path="addProduct" element={<AddProduct />} />
+          <Route path="manageUsers" element={<ManageUsers />} />
+          <Route path="manageOrders" element={<ManageOrders />} />
+          <Route path="manageProducts" element={<ManageProducts />} />
+        </Route>
       </Routes>
       <Footer />
       <ReactToastifyContainer />
