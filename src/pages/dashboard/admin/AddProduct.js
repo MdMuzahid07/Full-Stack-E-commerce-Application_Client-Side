@@ -50,7 +50,7 @@ const AddProduct = () => {
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <input {...register("minimumOrder")} type="number" placeholder="Minimum order" className="input input-bordered w-full rounded-xl" />
-                                <input {...register("for")} type="text" placeholder="Where you want showcase the product" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("for")} type="text" placeholder="category" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-4 my-4">
