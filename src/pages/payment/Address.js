@@ -1,8 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 
 const Address = () => {
+    const navigate = useNavigate();
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -13,8 +17,13 @@ const Address = () => {
 
     console.log(watch);
 
+    const handleAddressForm = () => {
+        navigate("/payment")
+    };
+
     return (
         <section className="px-3 lg:px-0 my-10">
+            <HelmetTitle>Address</HelmetTitle>
             <div className="card card-compact bg-white w-full border rounded-xl my-7 md:my-0">
                 <div className="card-body">
 
@@ -44,7 +53,7 @@ const Address = () => {
 
                         <input {...register("password")} type="password" placeholder="password" className="input input-bordered w-full rounded-xl mt-4" />
 
-                        <button className="btn btn-outline rounded-xl my-7">
+                        <button type="submit" onClick={handleAddressForm} className="btn btn-outline rounded-xl my-7">
                             Submit
                         </button>
                     </form>
