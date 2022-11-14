@@ -18,6 +18,8 @@ import Home from "./pages/home/Home";
 import ProductDetails from "./pages/home/showcaseProducts/ProductDetails";
 import Login from "./pages/loginSignup/Login";
 import SignUp from "./pages/loginSignup/SignUp";
+import Address from "./pages/payment/Address";
+import Payment from "./pages/payment/Payment";
 import Store from "./pages/store/Store";
 import RequireAuth from "./requireauth/RequireAuth";
 
@@ -34,7 +36,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/*" element={<ErrorPage />} />
+        <Route path="/address" element={<Address />} />
+        <Route path="/payment" element={<Payment />} />
 
         {/* dashboard routes */}
         <Route path="/dashboard" element={
@@ -50,6 +53,7 @@ function App() {
           <Route path="manageOrders" element={<ManageOrders />} />
           <Route path="manageProducts" element={<ManageProducts />} />
         </Route>
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer />
       <ReactToastifyContainer />
