@@ -2,6 +2,9 @@ import React from 'react';
 import ProductCard from './ProductCard';
 
 const ShowcaseProducts = () => {
+
+
+
     return (
         <section className="bg-white my-20">
             <span className="font-bold flex align-center"><span className="material-symbols-outlined">
