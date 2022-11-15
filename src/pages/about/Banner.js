@@ -6,7 +6,7 @@ const Banner = () => {
         <div className="border rounded-xl bg-white p-10 md:px-20 my-10">
             <div className="md:flex justify-between items-center gap-4">
                 <div>
-                    <div class="flex items-center">
+                    <div className="flex items-center">
                         <div>
                             <Link to="/">
                                 <span className="text-xl mr-2">Home <span className="font-bold">{`<`}</span></span>

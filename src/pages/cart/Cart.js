@@ -24,7 +24,7 @@ const Cart = () => {
                 <div>
                     <div className="border rounded-xl p-5 md:p-10 sticky top-28">
                         <div>
-                            <p className="text-2xl font-bold"><span class="material-symbols-outlined mr-3 bg-warning rounded-full p-2">
+                            <p className="text-2xl font-bold"><span className="material-symbols-outlined mr-3 bg-warning rounded-full p-2">
                                 shopping_cart
                             </span>Your Cart</p>
                         </div>

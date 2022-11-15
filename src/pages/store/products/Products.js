@@ -64,7 +64,7 @@ const Products = () => {
             </div>
             <div className="mt-10 md:sticky md:bottom-10">
                 <button className="btn btn-wide btn-outline btn-warning rounded-full  bg-white">
-                    Load More <span class="material-symbols-outlined ml-2">
+                    Load More <span className="material-symbols-outlined ml-2">
                         arrow_forward
                     </span>
                 </button>

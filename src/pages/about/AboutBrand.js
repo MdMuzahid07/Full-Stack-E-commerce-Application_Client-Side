@@ -9,7 +9,7 @@ const AboutBrand = () => {
                 </div>
                 <div className="p-10">
                     <div>
-                        <p className="text-2xl font-bold"><span class="material-symbols-outlined mr-3 bg-warning rounded-full p-2">
+                        <p className="text-2xl font-bold"><span className="material-symbols-outlined mr-3 bg-warning rounded-full p-2">
                             add_business
                         </span>About Our Brand</p>
                     </div>

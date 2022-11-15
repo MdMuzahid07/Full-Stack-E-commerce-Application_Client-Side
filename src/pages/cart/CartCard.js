@@ -12,11 +12,11 @@ const CartCard = () => {
                 <div className="p-2">
                     <p className="font-bold text-warning">Product Name</p>
                     <div className="btn-group mt-2">
-                        <button className="btn btn-xs"><span class="material-symbols-outlined">
+                        <button className="btn btn-xs"><span className="material-symbols-outlined">
                             remove
                         </span></button>
                         <div className="font-bold px-2">1</div>
-                        <button className="btn btn-xs"><span class="material-symbols-outlined">
+                        <button className="btn btn-xs"><span className="material-symbols-outlined">
                             add
                         </span></button>
                     </div>

@@ -4,7 +4,7 @@ const ThumbnailAirPodMax = () => {
     return (
         <section className="bg-slate-100 p-5 md:p-20 md:flex justify-between align-center gap-4 border rounded-xl mt-32">
             <div>
-                <div className="flex align-center font-bold"><span class="material-symbols-outlined">
+                <div className="flex align-center font-bold"><span className="material-symbols-outlined">
                     headphones
                 </span>Get 5% discount</div>
                 <div className="text-xl md:text-3xl lg:text-5xl text-warning font-bold mt-3 mb-10">

@@ -9,17 +9,17 @@ const ProductCard = () => {
                 <p>Apple is a amazing brand</p>
                 <div className="flex align-center mt-3">
                     <button className="btn btn-outline btn-warning btn-circle">
-                        <span class="material-symbols-outlined text-black">
+                        <span className="material-symbols-outlined text-black">
                             shopping_cart
                         </span>
                     </button>
                     <button className="btn btn-outline btn-warning btn-circle mx-5">
-                        <span class="material-symbols-outlined text-black">
+                        <span className="material-symbols-outlined text-black">
                             favorite
                         </span>
                     </button>
                     <button className="btn btn-outline btn-warning btn-circle">
-                        <span class="material-symbols-outlined text-black">
+                        <span className="material-symbols-outlined text-black">
                             visibility
                         </span>
                     </button>

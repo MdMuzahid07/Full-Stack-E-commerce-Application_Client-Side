@@ -1,7 +1,27 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
+import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 
 const ProductDetails = () => {
+    const { Id } = useParams();
+
+    const url = `http://localhost:5000/api/v1/products/${Id}`
+    const { data: product, isLoading, error, refetch } = useQuery("product", () => fetch(url).then(res => res.json())
+    );
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    } else if (!product) {
+        return refetch();
+    } else if (error) {
+        toast.error(error.message)
+    };
+
+    const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity } = product?.data;
+
     return (
         <section className="px-3 lg:px-0">
             <HelmetTitle>ProductDetails</HelmetTitle>
@@ -9,19 +29,20 @@ const ProductDetails = () => {
             <div className="grid md:grid-cols-2 gap-4 my-10">
 
                 <div className="bg-slate-100 rounded-xl">
-                    <img className="rounded-xl" src="https://new.axilthemes.com/demo/template/etrade/assets/images/product/electric/product-08.png" alt="" />
+                    <img className="rounded-xl w-full" src={productImage} alt="product_image" />
                 </div>
 
                 <div className="bg-white p-5">
                     <div>
                         <span className="badge badge-warning font-bold">New</span>
-                        <div className="text-2xl md:text-4xl font-bold text-warning mt-3">Product Name</div>
+                        <div className="text-2xl md:text-4xl font-bold text-warning mt-3">{productName}</div>
+                        <div className=" font-bold mt-3">Brand: {brand}</div>
                         <div className="text-xl font-bold my-2">Product offer price</div>
                     </div>
                     <div className="mt-7">
-                        <div>Price: 100$</div>
-                        <div>Minimum Order: 1</div>
-                        <div>Available Quantity: 70</div>
+                        <div>Price: ${price}</div>
+                        <div>Minimum Order:{minimumOrder}</div>
+                        <div>Available Quantity: {productQuantity}</div>
                     </div>
 
                     <div className="mt-10">
@@ -40,7 +61,7 @@ const ProductDetails = () => {
                         </div>
                     </div>
                     <div className="mt-10">
-                        <button className="btn btn-wide rounded-full"><span class="material-symbols-outlined">
+                        <button className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
                             shopping_cart
                         </span>Add Cart</button>
                     </div>
@@ -50,25 +71,24 @@ const ProductDetails = () => {
             <div className="my-10">
                 <div className="text-xl font-bold text-warning mb-3">Features & Functionalities</div>
                 <hr />
-                <p className="my-2"><span className="font-bold">1.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">1.</span> {feature1}</p>
                 <hr />
-                <p className="my-2"><span className="font-bold">2.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">2.</span> {feature2} </p>
                 <hr />
-                <p className="my-2"><span className="font-bold">3.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">3.</span> {feature3}</p>
                 <hr />
-                <p className="my-2"><span className="font-bold">4.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">4.</span> {feature4}</p>
                 <hr />
-                <p className="my-2"><span className="font-bold">5.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">5.</span> {feature5}</p>
                 <hr />
-                <p className="my-2"><span className="font-bold">6.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">6.</span> {feature6}</p>
                 <hr />
-                <p className="my-2"><span className="font-bold">7.</span> Ultra performance</p>
+                <p className="my-2"><span className="font-bold">7.</span> {feature7}</p>
             </div>
             <div>
                 <div>
                     <div className="text-xl font-bold text-warning mb-3">Description </div>
-
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit necessitatibus officia beatae eum alias vitae voluptatibus quis, aliquid, id eligendi reprehenderit quas debitis hic iste? Minima a aperiam eius repellat doloremque adipisci iure? Voluptate quibusdam suscipit illum eius distinctio, ducimus quos. Est esse, facere cumque ullam ex sapiente explicabo provident iste non eligendi nisi. Vero magnam maiores corrupti voluptatem quisquam suscipit odit est aperiam at, a saepe, quia mollitia sunt deleniti ex iure amet deserunt placeat quos officia eum. Voluptatem deserunt libero explicabo sint animi corrupti, illo at dolorum voluptates commodi! Officia dicta sint reprehenderit, sit qui doloribus modi nulla? Temporibus esse, tempora earum iure dolorem sit vitae neque voluptate magni ducimus itaque veritatis. At laborum esse quae porro repudiandae dolorum quibusdam error est eos quis, in doloribus culpa numquam ipsum atque ab amet animi perspiciatis autem recusandae et aliquid dicta ducimus beatae? Dignissimos, quas minus eveniet ad fugiat, eligendi dolor et ut similique asperiores optio itaque! Unde facere, magni excepturi corporis ducimus possimus, voluptatem a nemo nam voluptatum soluta dolorem cumque vero quae, explicabo distinctio sit! Obcaecati nulla cumque magni voluptatem delectus adipisci officiis, amet totam repellat pariatur assumenda excepturi distinctio laborum voluptate veritatis, temporibus necessitatibus. Ullam, commodi voluptatum?
+                    {description}
                 </div>
             </div>
 
