@@ -1,8 +1,19 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import ProductCard from './ProductCard';
 
 const ShowcaseProducts = () => {
+    const { data: products, isLoading, error, refetch } = useQuery("products", () => fetch("http://localhost:5000/api/v1/products").then(res => res.json())
+    );
 
+    if (isLoading) {
+        return <p>loading</p>
+    } else if (!products) {
+        return refetch();
+    } else if (error) {
+        toast.error(error.message)
+    };
 
 
     return (
@@ -14,16 +25,11 @@ const ShowcaseProducts = () => {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
 
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+
+                {
+                    products?.data?.map((product) => <ProductCard key={product?._id} product={product} />)
+                }
+
 
             </div>
             <div className="mt-10 md:sticky md:bottom-10">

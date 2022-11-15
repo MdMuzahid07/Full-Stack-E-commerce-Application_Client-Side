@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
     const navigate = useNavigate();
+
+    const { productName, brand, productImage } = product;
 
     const handleProductDetails = () => {
         navigate("/productDetails");
@@ -10,10 +12,10 @@ const ProductCard = () => {
 
     return (
         <section className="card card-compact">
-            <figure className="bg-white border border-2 hover:border-warning rounded-xl"><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <figure className="bg-white border border-2 hover:border-warning rounded-xl"><img src={productImage} alt="Shoes" /></figure>
             <div className="py-4">
-                <h2 className="card-title text-warning">product name</h2>
-                <p>Apple is a amazing brand</p>
+                <h2 className="card-title text-warning">{productName}</h2>
+                <p>{brand}</p>
                 <div className="flex align-center mt-3">
                     <button className="btn btn-outline btn-warning btn-circle">
                         <span class="material-symbols-outlined text-black">
