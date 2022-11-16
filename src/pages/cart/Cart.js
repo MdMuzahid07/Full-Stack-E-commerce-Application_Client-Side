@@ -20,6 +20,8 @@ const Cart = () => {
                     <CartCard />
                     <CartCard />
                     <CartCard />
+                    <CartCard />
+                    <CartCard />
                 </div>
                 <div>
                     <div className="border rounded-xl p-5 md:p-10 sticky top-28">
