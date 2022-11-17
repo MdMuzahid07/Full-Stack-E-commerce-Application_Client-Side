@@ -6,7 +6,7 @@ const Categories = () => {
             <span className="font-bold flex align-center"><span className="material-symbols-outlined">
                 sell
             </span>Categories</span>
-            <div className="text-xl md:text-3xl font-bold text-warning mt-3">Choose by category</div>
+            <div className="text-xl md:text-3xl font-bold text-warning mt-3">All Categories</div>
             <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mt-10">
                 <div className="border rounded-xl px-3 py-7 flex justify-center align-center hover:border-warning">
                     <div>
