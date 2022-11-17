@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const PaymentForm = () => {
     const stripe = useStripe();
@@ -19,6 +20,16 @@ const PaymentForm = () => {
             return;
         }
 
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card,
+        });
+
+        if (error) {
+            toast.error(error.message);
+        } else {
+            toast.success("Payment Successful");
+        }
 
     };
 
