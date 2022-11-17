@@ -1,7 +1,21 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
+import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 import ProductCard from './ProductCard';
 
 const Products = () => {
+    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("http://localhost:5000/api/v1/products").then(res => res.json())
+    );
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    } else if (!products) {
+        return refetch();
+    } else if (error) {
+        toast.error(error.message)
+    };
+
     return (
         <section className="bg-white my-20">
             <div className="md:flex justify-between items-center">
@@ -47,19 +61,9 @@ const Products = () => {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
 
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {
+                    products?.data?.map((product) => <ProductCard key={product._id} product={product} />)
+                }
 
             </div>
             <div className="mt-10 md:sticky md:bottom-10">

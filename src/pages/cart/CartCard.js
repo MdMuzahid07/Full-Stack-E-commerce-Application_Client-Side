@@ -17,6 +17,10 @@ const CartCard = () => {
         }
     };
 
+    const handleDeleteProduct = () => {
+        toast.error("its undergoing development");
+    };
+
     return (
         <div>
             <div className="flex  items-center justify-between rounded-xl mb-4">
@@ -43,7 +47,7 @@ const CartCard = () => {
                     <div className="p-2">
                         $100 USD
                     </div>
-                    <button className="btn btn-outline btn-circle">
+                    <button onClick={handleDeleteProduct} className="btn btn-outline btn-circle">
                         <span class="material-symbols-outlined">
                             delete
                         </span>

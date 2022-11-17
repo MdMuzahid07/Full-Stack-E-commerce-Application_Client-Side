@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({ product }) => {
     const navigate = useNavigate();
@@ -10,6 +11,11 @@ const ProductCard = ({ product }) => {
         navigate(`/productDetails/${id}`);
     };
 
+    const handleAddToCart = (id) => {
+        toast.error("undergoing development");
+        console.log(id);
+    };
+
     return (
         <section className="card card-compact">
             <figure className="bg-white border border-2 hover:border-warning rounded-xl"><img src={productImage} alt="Shoes" /></figure>
@@ -17,7 +23,7 @@ const ProductCard = ({ product }) => {
                 <h2 className="card-title text-warning">{productName}</h2>
                 <p>{brand}</p>
                 <div className="flex align-center mt-3">
-                    <button className="btn btn-outline btn-warning btn-circle">
+                    <button onClick={() => handleAddToCart(_id)} className="btn btn-outline btn-warning btn-circle">
                         <span className="material-symbols-outlined text-black">
                             shopping_cart
                         </span>
