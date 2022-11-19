@@ -1,19 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, handleAddToCart }) => {
     const navigate = useNavigate();
 
     const { productName, brand, productImage, _id } = product;
 
     const handleProductDetails = (id) => {
         navigate(`/productDetails/${id}`);
-    };
-
-    const handleAddToCart = (id) => {
-        toast.error("undergoing development");
-        console.log(id);
     };
 
     return (

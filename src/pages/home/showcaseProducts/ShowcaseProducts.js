@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 import ProductCard from './ProductCard';
 
 const ShowcaseProducts = () => {
+    const [cart, handleAddToCart] = useState();
+
+    console.log(cart);
+
     const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("http://localhost:5000/api/v1/products").then(res => res.json())
     );
 
@@ -27,7 +31,7 @@ const ShowcaseProducts = () => {
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
 
                 {
-                    products?.data?.map((product) => <ProductCard key={product._id} product={product} />)
+                    products?.data?.map((product) => <ProductCard key={product._id} product={product} handleAddToCart={handleAddToCart} />)
                 }
 
             </div>
