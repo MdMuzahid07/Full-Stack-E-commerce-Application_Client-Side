@@ -4,13 +4,6 @@ import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
 
-/**********
- * just complete a single image upload functionality and basic post template
- * i have to complete all image upload functionality using imgbb , and also product data
- */
-
-
-
 const AddProduct = () => {
     const [productImage, setProductImage] = useState();
     console.log(productImage)
@@ -69,11 +62,11 @@ const AddProduct = () => {
                 if (result.success) {
                     const img = result.data.url;
                     setProductImage(img)
+                } else {
+                    toast.error(result.error)
                 }
-                console.log(result);
             })
-
-    }
+    };
 
 
 
