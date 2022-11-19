@@ -8,7 +8,7 @@ import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 const ProductDetails = () => {
     const { Id } = useParams();
 
-    const url = `http://localhost:5000/api/v1/products/${Id}`
+    const url = `https://kino-9rm3.onrender.com/api/v1/products/${Id}`
     const { data: product, isLoading, error, refetch } = useQuery("product", () => fetch(url).then(res => res.json())
     );
 
