@@ -3,6 +3,14 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
+
+/**********
+ * just complete a single image upload functionality and basic post template
+ * i have to complete all image upload functionality using imgbb , and also product data
+ */
+
+
+
 const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -35,11 +43,31 @@ const AddProduct = () => {
         console.log(errors)
     }
 
+
+    // upload image in imgBB
+    const storageKey = "f95e3d1149cccc6bb06984f541a59718";
+    const uploadUrl = `https://api.imgbb.com/1/upload?key=${storageKey}`;
+
+
     const productImageUpload = (event) => {
-        console.log(event.target.files[0].name)
+        const img = event.target.files[0];
+
+        const formData = new FormData();
+        formData.append("image", img);
+
+        fetch(uploadUrl, {
+            method: "POST",
+            body: formData
+        }).then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    // const img = result.data.url;
+                    console.log("imgbb", result)
+
+                }
+            })
 
     }
-
 
 
 
@@ -102,22 +130,22 @@ const AddProduct = () => {
                             <div className="grid md:grid-cols-2 gap-4 my-4">
                                 <div>
                                     <p>Product image</p>
-                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" name="productImage" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                                 <div>
                                     <p>SnapShot0</p>
-                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" name="snapShot0" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-4 mt-4">
                                 <div>
                                     <p>Snapshot1</p>
-                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" name="snapShot1" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                                 <div>
                                     <p>SnapShot2</p>
-                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" name="snapShot2" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                             </div>
 
