@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import { onAuthStateChanged } from "firebase/auth";
+
 
 const Navbar = () => {
+    const [currentUser, setCurrentUser] = useState();
 
     const handleLogout = () => {
-        signOut(auth).then(() => {
-            toast.success("Logout Successfully");
-        }).catch((error) => {
-            toast.error(error.message);
-        });
+        if (!currentUser) {
+            toast.error("User not available to LogOut")
+        } else {
+            signOut(auth).then(() => {
+                toast.success("Logout Successfully");
+            }).catch((error) => {
+                toast.error(error.message);
+            });
+        }
     };
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setCurrentUser(user)
+        }
+    });
+
 
     return (
         <header className="px-3 lg:px-0 sticky top-0 z-50">
@@ -64,10 +78,10 @@ const Navbar = () => {
                                 <div className="flex align-center">
                                     <div className="avatar">
                                         <div className="w-10 rounded-full">
-                                            <img src="https://placeimg.com/192/192/people" alt="" />
+                                            <img src={currentUser ? currentUser?.photoURL : "https://placeimg.com/192/192/people"} alt="" />
                                         </div>
                                     </div>
-                                    <span className="font-bold">Username</span>
+                                    <span className="font-bold">{currentUser ? currentUser?.displayName : "Username"}</span>
                                 </div>
                             </li>
                             <li>
