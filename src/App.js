@@ -7,7 +7,7 @@ import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import AddProduct from "./pages/dashboard/admin/AddProduct";
 import ManageOrders from "./pages/dashboard/admin/ManageOrders";
-import ManageProducts from "./pages/dashboard/admin/ManageProducts";
+import ManageProducts from "./pages/dashboard/admin/ManageProducts/ManageProducts";
 import ManageUsers from "./pages/dashboard/admin/ManageUsers";
 import Dashboard from "./pages/dashboard/Dashboard";
 import MyProfile from "./pages/dashboard/MyProfile";

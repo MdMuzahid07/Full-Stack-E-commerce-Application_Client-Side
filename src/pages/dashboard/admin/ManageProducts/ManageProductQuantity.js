@@ -2,8 +2,8 @@ import React from 'react';
 
 const ManageProductQuantity = () => {
 
-    const handleQuantityUpdate = () => {
-        alert("working?");
+    const handleQuantityUpdate = ({ _id }) => {
+        alert("working?", _id);
     }
 
     return (
