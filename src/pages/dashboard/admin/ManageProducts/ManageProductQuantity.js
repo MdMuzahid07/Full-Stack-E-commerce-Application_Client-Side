@@ -1,20 +1,48 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const ManageProductQuantity = () => {
+const ManageProductQuantity = ({ product }) => {
+    const { _id, productQuantity, productName } = product;
 
-    const handleQuantityUpdate = ({ _id }) => {
-        alert("working?", _id);
-    }
+    const handleQuantityUpdate = (event) => {
+        event.preventDefault();
+        console.log(_id);
+
+        const inputValue = event.target.quantity.value;
+        const newQuantity = +inputValue + +productQuantity;
+
+        const data = {
+            ...product,
+            productQuantity: newQuantity
+        }
+
+        const url = `https://kino-9rm3.onrender.com/api/v1/products/${_id}`;
+
+        fetch(url, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result?.success) {
+                    toast.success(`${productName} quantity updated`);
+                }
+            })
+
+    };
 
     return (
         <div className="dropdown dropdown-end z-50 mt-2">
             <label tabIndex={0} className="btn btn-xs rounded-full">Update Quantity</label>
             <ul tabIndex={0} className="dropdown-content menu bg-white border rounded-xl p-2 w-52">
                 <li>
-                    <div className="flex justify-center items-center p-0">
-                        <input type="number" placeholder="add quantity" className="input w-full" />
-                        <button onClick={handleQuantityUpdate} className="btn btn-dark btn-circle">Ok</button>
-                    </div>
+                    <form onSubmit={handleQuantityUpdate} className="flex justify-center items-center p-0">
+                        <input type="number" name="quantity" placeholder="add quantity" className="input w-full" />
+                        <button type="submit" className="btn btn-dark btn-circle">Ok</button>
+                    </form>
                 </li>
             </ul>
         </div>

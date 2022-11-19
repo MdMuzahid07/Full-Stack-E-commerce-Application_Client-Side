@@ -59,24 +59,24 @@ const ManageProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            products?.data?.map(({ productImage, productName, productQuantity, price, _id }) => {
+                            products?.data?.map((product) => {
                                 return (
-                                    <tr>
+                                    <tr key={product._id}>
                                         <th>
-                                            <h2>{productQuantity}</h2>
+                                            <h2>{product?.productQuantity}</h2>
                                         </th>
                                         <td>
                                             <div>
-                                                <img className="w-10" src={productImage} alt=" product_image" />
+                                                <img className="w-10" src={product?.productImage} alt=" product_image" />
                                             </div>
                                         </td>
                                         <td>
-                                            <p>{productName}</p>
+                                            <p>{product?.productName}</p>
                                         </td>
-                                        <td>{price}</td>
+                                        <td>{product?.price}</td>
                                         <th>
-                                            <button onClick={() => handleDeleteProduct(_id, productName)} className="btn rounded-full btn-xs block">Delete</button>
-                                            <ManageProductQuantity _id={_id} />
+                                            <button onClick={() => handleDeleteProduct(product?._id, product?.productName)} className="btn rounded-full btn-xs block">Delete</button>
+                                            <ManageProductQuantity product={product} />
                                         </th>
                                     </tr>
                                 )
