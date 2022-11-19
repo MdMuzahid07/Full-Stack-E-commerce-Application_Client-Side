@@ -1,16 +1,46 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
 const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        console.log(data.productName);
+
+        const productData = {
+            ...data,
+
+        };
+
+        const url = "url";
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application.json"
+            },
+            body: JSON.stringify(productData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    toast.success(`${data.productName} upload successfully`);
+                }
+            })
+
     };
 
     if (errors) {
         console.log(errors)
     }
+
+    const productImageUpload = (event) => {
+        console.log(event.target.files[0].name)
+
+    }
+
+
 
 
     return (
@@ -67,27 +97,27 @@ const AddProduct = () => {
                                 <input {...register("feature6")} type="text" placeholder="feature6" className="input input-bordered w-full rounded-xl" />
                             </div>
 
-                            <input {...register("feature67")} type="text" placeholder="feature7" className="input input-bordered w-full rounded-xl" />
+                            <input {...register("feature7")} type="text" placeholder="feature7" className="input input-bordered w-full rounded-xl" />
 
                             <div className="grid md:grid-cols-2 gap-4 my-4">
                                 <div>
                                     <p>Product image</p>
-                                    <input {...register("img")} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                                 <div>
                                     <p>SnapShot0</p>
-                                    <input {...register("snapshot0")} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-4 mt-4">
                                 <div>
                                     <p>Snapshot1</p>
-                                    <input {...register("snapshot1")} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                                 <div>
                                     <p>SnapShot2</p>
-                                    <input {...register("snapshot2")} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
+                                    <input onChange={productImageUpload} type="file" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                                 </div>
                             </div>
 
