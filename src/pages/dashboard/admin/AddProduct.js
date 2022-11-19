@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
@@ -12,27 +12,32 @@ import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
 
 const AddProduct = () => {
+    const [productImage, setProductImage] = useState();
+    console.log(productImage)
+
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
+
+    const onSubmit = async (data) => {
         console.log(data.productName);
 
-        const productData = {
+        const productData = await {
             ...data,
-
+            productImage
         };
 
-        const url = "url";
+        const url = "http://localhost:5000/api/v1/products";
 
         fetch(url, {
             method: "POST",
             headers: {
-                "content-type": "application.json"
+                "content-type": "application/json"
             },
             body: JSON.stringify(productData)
         })
             .then(res => res.json())
             .then(result => {
-                if (result) {
+                console.log(result)
+                if (result.success) {
                     toast.success(`${data.productName} upload successfully`);
                 }
             })
@@ -50,6 +55,7 @@ const AddProduct = () => {
 
 
     const productImageUpload = (event) => {
+
         const img = event.target.files[0];
 
         const formData = new FormData();
@@ -61,10 +67,10 @@ const AddProduct = () => {
         }).then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    // const img = result.data.url;
-                    console.log("imgbb", result)
-
+                    const img = result.data.url;
+                    setProductImage(img)
                 }
+                console.log(result);
             })
 
     }
@@ -95,19 +101,19 @@ const AddProduct = () => {
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <input {...register("productName")} type="text" placeholder="product name" className="input input-bordered w-full rounded-xl my-4" />
-                                <input {...register("Brand")} type="text" placeholder="Brand" className="input input-bordered w-full rounded-xl my-4" />
+                                <input {...register("brand")} type="text" placeholder="Brand" className="input input-bordered w-full rounded-xl my-4" />
                             </div>
 
                             <textarea {...register("description")} type="text" placeholder="description" className="textarea textarea-bordered w-full rounded-xl" />
 
                             <div className="grid md:grid-cols-2 gap-4 my-4">
                                 <input {...register("price")} type="number" placeholder="Price" className="input input-bordered w-full rounded-xl" />
-                                <input {...register("quantity")} type="number" placeholder="Product quantity" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("productQuantity")} type="number" placeholder="Product quantity" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-4">
                                 <input {...register("minimumOrder")} type="number" placeholder="Minimum order" className="input input-bordered w-full rounded-xl" />
-                                <input {...register("for")} type="text" placeholder="category" className="input input-bordered w-full rounded-xl" />
+                                <input {...register("category")} type="text" placeholder="category" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-4 my-4">
@@ -127,26 +133,9 @@ const AddProduct = () => {
 
                             <input {...register("feature7")} type="text" placeholder="feature7" className="input input-bordered w-full rounded-xl" />
 
-                            <div className="grid md:grid-cols-2 gap-4 my-4">
-                                <div>
-                                    <p>Product image</p>
-                                    <input onChange={productImageUpload} type="file" name="productImage" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
-                                </div>
-                                <div>
-                                    <p>SnapShot0</p>
-                                    <input onChange={productImageUpload} type="file" name="snapShot0" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
-                                </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 gap-4 mt-4">
-                                <div>
-                                    <p>Snapshot1</p>
-                                    <input onChange={productImageUpload} type="file" name="snapShot1" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
-                                </div>
-                                <div>
-                                    <p>SnapShot2</p>
-                                    <input onChange={productImageUpload} type="file" name="snapShot2" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
-                                </div>
+                            <div className="mt-4">
+                                <p>Product image</p>
+                                <input onChange={productImageUpload} type="file" name="productImage" className="file-input file-input-bordered file-input-xs w-full max-w-xs rounded-xl" />
                             </div>
 
                             <button className="btn btn-outline rounded-xl my-7"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
