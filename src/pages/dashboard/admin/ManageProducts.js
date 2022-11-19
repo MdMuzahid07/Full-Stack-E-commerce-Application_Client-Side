@@ -1,7 +1,20 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
+import ManageProductQuantity from './ManageProductQuantity';
 
 const ManageProducts = () => {
+
+    const handleDeleteProduct = () => {
+        const sure = window.confirm("Are you sure?");
+
+        if (sure) {
+            toast.success("Product delete successfully");
+        }
+
+    };
+
+
     return (
         <section className="my-10">
             <HelmetTitle>Mange Products</HelmetTitle>
@@ -39,8 +52,9 @@ const ManageProducts = () => {
                             </td>
                             <td>Purple</td>
                             <th>
-                                <button className="btn rounded-full btn-xs block">Delete</button>
-                                <button className="btn rounded-full btn-xs block  my-2">Update Quantity</button>
+                                <button onClick={handleDeleteProduct} className="btn rounded-full btn-xs block">Delete</button>
+                                <ManageProductQuantity />
+                                {/* <button className="btn rounded-full btn-xs block  my-2">Update Quantity</button> */}
                             </th>
                         </tr>
 
