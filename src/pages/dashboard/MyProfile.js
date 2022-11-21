@@ -2,10 +2,15 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
+import useCurrentUser from '../../hooks/useCurrentUser';
 
 const MyProfile = () => {
+    const { currentUser, error } = useCurrentUser();
+
+    console.log(currentUser)
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data) => {
         console.log(data)
     };
     if (errors) {
