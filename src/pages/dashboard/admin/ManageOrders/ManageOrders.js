@@ -1,5 +1,5 @@
 import React from 'react';
-import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
+import HelmetTitle from '../../../../components/helmetTitle/HelmetTitle';
 
 const ManageOrders = () => {
     return (

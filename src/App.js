@@ -6,7 +6,7 @@ import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import AddProduct from "./pages/dashboard/admin/AddProduct";
-import ManageOrders from "./pages/dashboard/admin/ManageOrders";
+import ManageOrders from "./pages/dashboard/admin/ManageOrders/ManageOrders";
 import ManageProducts from "./pages/dashboard/admin/ManageProducts/ManageProducts";
 import ManageUsers from "./pages/dashboard/admin/ManageUsers";
 import Dashboard from "./pages/dashboard/Dashboard";

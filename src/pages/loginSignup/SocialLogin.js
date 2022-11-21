@@ -25,17 +25,11 @@ const SocialLogin = () => {
             });
     };
 
-    const handleGithubSignIn = () => {
-        toast.error("undergoing development");
-    };
 
     return (
-        <div className="mt-10 flex items-center">
-            <button onClick={handleGoogleSignIn} className="btn btn-ghost btn-circle">
-                <img className="w-9" src="https://i.ibb.co/d4DQ4Xt/google-logo.png" alt="" />
-            </button>
-            <button onClick={handleGithubSignIn} className="btn btn-ghost btn-circle">
-                <img className="w-9" src="https://i.ibb.co/xC3GCnp/github-logo.png" alt="" />
+        <div className="mt-16">
+            <button onClick={handleGoogleSignIn} className="btn btn-dark w-full rounded-full">
+                <img className="w-9 mr-3" src="https://i.ibb.co/HXDJ62Q/google.png" alt="" /> <span>Sign in using google</span>
             </button>
         </div>
     );
