@@ -16,6 +16,7 @@ const ReviewSlider = () => {
         slidesToScroll: 1,
         swipeToSlide: true,
         initialSlide: 0,
+        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1024,
@@ -27,15 +28,7 @@ const ReviewSlider = () => {
                 }
             },
             {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            },
-            {
-                breakpoint: 600,
+                breakpoint: 650,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
