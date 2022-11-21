@@ -1,5 +1,6 @@
 import React from 'react';
 import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
+import ReviewSlider from '../../components/review/ReviewSlider';
 import ThumbnailAirPodMax from './airpodMaxThumbnail/ThumbnailAirPodMax';
 import Categories from './categories/Categories';
 import Footer from './footer/Footer';
@@ -14,6 +15,7 @@ const Home = () => {
             <Categories />
             <ThumbnailAirPodMax />
             <ShowcaseProducts />
+            <ReviewSlider />
             <Footer />
         </section>
     );
