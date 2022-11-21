@@ -40,7 +40,7 @@ const ManageOrders = () => {
                             <td>Purple</td>
                             <th>
                                 <button className="btn rounded-full btn-xs block">Cancel</button>
-                                <button className="btn btn-success rounded btn-xs block  my-2">Paid</button>
+                                <button className="btn btn-success rounded-full btn-xs my-2">Paid</button>
                                 <button className="btn rounded-full btn-xs block">Trucker Update</button>
                             </th>
                         </tr>

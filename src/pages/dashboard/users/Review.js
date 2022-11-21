@@ -1,7 +1,9 @@
 import React from 'react';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
+import useCurrentUser from '../../../hooks/useCurrentUser';
 
 const Review = () => {
+    const { currentUser } = useCurrentUser();
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
@@ -19,7 +21,7 @@ const Review = () => {
                     <div className="p-10">
                         <div className="avatar -mt-16">
                             <div className="w-32 border rounded-full">
-                                <img src="https://placeimg.com/192/192/people" alt="profile_img " />
+                                <img src={currentUser ? currentUser?.photoURL : "https://placeimg.com/192/192/people"} alt="profile_img" />
                             </div>
                         </div>
                         <h2 className="text-2xl font-bold">Review Us</h2>

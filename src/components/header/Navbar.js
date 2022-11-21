@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-import { onAuthStateChanged } from "firebase/auth";
+import useCurrentUser from '../../hooks/useCurrentUser';
 
 
 const Navbar = () => {
-    const [currentUser, setCurrentUser] = useState();
+    const { currentUser } = useCurrentUser();
 
     const handleLogout = () => {
         if (!currentUser) {
@@ -20,12 +20,6 @@ const Navbar = () => {
             });
         }
     };
-
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            setCurrentUser(user)
-        }
-    });
 
 
     return (

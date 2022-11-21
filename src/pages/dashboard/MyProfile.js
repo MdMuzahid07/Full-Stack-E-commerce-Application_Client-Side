@@ -5,9 +5,8 @@ import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 import useCurrentUser from '../../hooks/useCurrentUser';
 
 const MyProfile = () => {
-    const { currentUser, error } = useCurrentUser();
+    const { currentUser } = useCurrentUser();
 
-    console.log(currentUser)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
@@ -28,12 +27,12 @@ const MyProfile = () => {
                 <div className="card card-compact md:w-72 h-72 bg-white border rounded-xl">
                     <div className="avatar">
                         <div className="w-32 mx-auto border rounded-full -mt-7">
-                            <img src="https://placeimg.com/192/192/people" alt="profile_img" />
+                            <img src={currentUser ? currentUser?.photoURL : "https://placeimg.com/192/192/people"} alt="profile_img" />
                         </div>
                     </div>
                     <div className="card-body">
-                        <h2 className="card-title">name</h2>
-                        <p>title</p>
+                        <h2 className="card-title">{currentUser ? currentUser?.displayName : "name"}</h2>
+                        <p>Admin</p>
                         <div className="card-actions border rounded-xl p-2">
                             <input type="file" className=" w-full text-xs
  

@@ -1,17 +1,18 @@
-import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../firebase.init';
+import useCurrentUser from '../hooks/useCurrentUser';
 
 const RequireAuth = ({ children }) => {
+    const { currentUser } = useCurrentUser();
     const navigate = useNavigate();
 
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
+    useEffect(() => {
+        if (!currentUser) {
             toast.error("Please Login")
             return navigate("/login");
         };
-    });
+    }, [currentUser, navigate]);
 
     return children;
 };
