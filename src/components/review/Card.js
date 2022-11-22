@@ -4,11 +4,9 @@ const Card = () => {
     return (
         <div className="p-2">
             <div className="bg-white border-2 hover:border-warning rounded-xl p-4">
-                <div style={
-                    {
-                        maxHeight: "110px",
-                    }
-                }> <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus provident vel maxime, distinctio, culpa mollitia quam quis reprehenderit ratione veniam odio iusto adipisci error et voluptatem reiciendis aut ducimus veritatis</small> </div>
+                <div>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatibus provident vel maxime, distinctio, culpa mollitia quam quis reprehenderit ratione veniam odio iusto adipisci error et voluptatem reiciendis aut ducimus veritatis</small>
+                </div>
             </div>
             <div className="mt-3 flex items-center">
                 <div className="avatar">

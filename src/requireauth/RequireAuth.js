@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import useCurrentUser from '../hooks/useCurrentUser';
 
 const RequireAuth = ({ children }) => {
-    const { currentUser } = useCurrentUser();
+    const { currentUser } = useCurrentUser({});
     const navigate = useNavigate();
 
     useEffect(() => {

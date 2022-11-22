@@ -31,15 +31,16 @@ const Address = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="grid md:grid-cols-2 gap-4">
-                            <input {...register("name")} type="text" placeholder="first name" className="input input-bordered w-full rounded-xl my-4" />
-                            <input {...register("name")} type="text" placeholder="last name" className="input input-bordered w-full rounded-xl my-4" />
+                            <input {...register("fName")} type="text" placeholder="first name" className="input input-bordered w-full rounded-xl my-4" />
+                            <input {...register("lName")} type="text" placeholder="last name" className="input input-bordered w-full rounded-xl my-4" />
                         </div>
 
-                        <input {...register("email")} type="email" placeholder="email address" className="input input-bordered w-full rounded-xl" />
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <input {...register("email")} type="email" placeholder="email address" className="input input-bordered w-full rounded-xl" />
+                            <input {...register("contact")} type="number" placeholder="phone" className="input input-bordered w-full rounded-xl" />
+                        </div>
 
-                        <input {...register("contact")} type="number" placeholder="phone" className="input input-bordered w-full rounded-xl my-4" />
-
-                        <input {...register("address")} type="text" placeholder="address" className="input input-bordered w-full rounded-xl" />
+                        <textarea {...register("address")} type="text" placeholder="home address" className="textarea textarea-bordered w-full rounded-xl mt-4" />
 
                         <div className="grid md:grid-cols-2 gap-4 my-4">
                             <input {...register("city")} type="text" placeholder="city" className="input input-bordered w-full rounded-xl" />
@@ -51,8 +52,7 @@ const Address = () => {
                             <input {...register("zip")} type="number" placeholder="zip code" className="input input-bordered w-full rounded-xl" />
                         </div>
 
-                        <input {...register("password")} type="password" placeholder="password" className="input input-bordered w-full rounded-xl mt-4" />
-
+                        {/* <input {...register("password")} type="password" placeholder="password" className="input input-bordered w-full rounded-xl mt-4" /> */}
                         <button type="submit" onClick={handleAddressForm} className="btn btn-outline rounded-xl my-7">
                             Submit
                         </button>
