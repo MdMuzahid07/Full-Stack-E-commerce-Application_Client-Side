@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ClickToTop from "./components/clickToTop/ClickToTop";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/header/Navbar";
 import ReactToastifyContainer from "./components/reactToastContainer/ReactToastifyContainer";
@@ -55,6 +56,7 @@ function App() {
         </Route>
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
+      <ClickToTop />
       <Footer />
       <ReactToastifyContainer />
     </main>

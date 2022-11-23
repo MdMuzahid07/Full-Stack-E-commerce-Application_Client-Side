@@ -1,14 +1,36 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 import useCurrentUser from '../../../hooks/useCurrentUser';
 
 const Review = () => {
     const { currentUser } = useCurrentUser();
 
-    const handleOnSubmit = (event) => {
+    const handleOnSubmit = async (event) => {
         event.preventDefault();
 
         console.log(event);
+
+
+        const productData = await {};
+
+        const url = "";
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(productData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                if (result.success) {
+                    toast.success(`${currentUser?.disPlayName} Thank You!`);
+                }
+            })
+
     };
 
     return (

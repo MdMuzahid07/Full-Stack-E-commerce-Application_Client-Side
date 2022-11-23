@@ -6,6 +6,7 @@ import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 
 const ProductDetails = () => {
+
     const { Id } = useParams();
 
     const url = `https://kino-9rm3.onrender.com/api/v1/products/${Id}`
@@ -48,26 +49,26 @@ const ProductDetails = () => {
                     <div className="mt-10">
                         <div className="text-xl font-bold mb-3">Choose Color</div>
                         <div className="flex gap-2 md:gap-4 text-white">
-                            <div className="bg-red-500 border rounded-full p-5">
-                            </div>
-                            <div className="bg-black border rounded-full p-5">
-                            </div>
-                            <div className="bg-pink-500 border rounded-full p-5">
-                            </div>
-                            <div className="bg-yellow-500 border rounded-full p-5">
-                            </div>
-                            <div className="bg-blue-500 border rounded-full p-5">
-                            </div>
-                        </div>
-                    </div>
+                            <button className="btn btn-circle bg-red-500">
+                            </button>
+                            <button className="btn btn-circle bg-black">
+                            </button>
+                            <button className="btn btn-circle bg-white">
+                            </button>
+                            <button className="btn btn-circle bg-yellow-500">
+                            </button>
+                            <button className="btn btn-circle bg-blue-500">
+                            </button>
+                        </div >
+                    </div >
                     <div className="mt-10">
                         <button className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
                             shopping_cart
                         </span>Add Cart</button>
                     </div>
-                </div>
+                </div >
 
-            </div>
+            </div >
             <div className="my-10">
                 <div className="text-xl font-bold text-warning mb-3">Features & Functionalities</div>
                 <hr />
@@ -92,7 +93,7 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-        </section>
+        </section >
     );
 };
 

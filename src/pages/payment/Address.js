@@ -7,7 +7,7 @@ import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 const Address = () => {
     const navigate = useNavigate();
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
     };
@@ -15,7 +15,6 @@ const Address = () => {
         toast.error(errors.message);
     };
 
-    console.log(watch);
 
     const handleAddressForm = () => {
         navigate("/payment")
