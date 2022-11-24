@@ -5,6 +5,7 @@ import SocialLogin from './SocialLogin';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import HandleSaveUser from './HandleSaveUser';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -12,7 +13,6 @@ const SignUp = () => {
     const handleEmailSingUp = (e) => {
         e.preventDefault();
 
-        console.log()
         // const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
@@ -21,6 +21,7 @@ const SignUp = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 if (user) {
+                    HandleSaveUser(user)
                     navigate("/");
                     toast.success("Welcome to Kino");
                 }

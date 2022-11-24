@@ -3,7 +3,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+import HandleSaveUser from './HandleSaveUser';
 
 const SocialLogin = () => {
     const navigate = useNavigate();
@@ -15,6 +15,7 @@ const SocialLogin = () => {
             .then((result) => {
                 const user = result.user;
                 if (user) {
+                    HandleSaveUser(user)
                     toast.success(`${user.displayName} Welcome to Kino`);
                     navigate("/");
                 }
