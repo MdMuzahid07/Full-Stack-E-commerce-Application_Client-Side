@@ -49,7 +49,7 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost btn-circle">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                         </label>
-                        <ul tabIndex={0} className="dropdown-content menu w-52 ms-5">
+                        <ul tabIndex={0} className="dropdown-content menu w-52 md:w-72 ms-5">
                             <li>
                                 <input type="text" placeholder="Search" className="input w-full max-w-xl rounded-lg drop-shadow bg-white" />
                             </li>
@@ -75,7 +75,7 @@ const Navbar = () => {
                                             <img src={currentUser ? currentUser?.photoURL : "https://placeimg.com/192/192/people"} alt="" />
                                         </div>
                                     </div>
-                                    <span className="font-bold">{currentUser ? currentUser?.displayName : "Username"}</span>
+                                    <span className="font-bold text-black">{currentUser ? currentUser?.displayName : "Username"}</span>
                                 </div>
                             </li>
                             <li>

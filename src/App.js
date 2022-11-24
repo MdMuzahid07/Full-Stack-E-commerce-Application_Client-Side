@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import ClickToTop from "./components/clickToTop/ClickToTop";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/header/Navbar";
-import ReactToastifyContainer from "./components/reactToastContainer/ReactToastifyContainer";
+import ReactToastContainer from "./components/reactToastContainer/ReactToastContainer";
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
@@ -58,7 +58,7 @@ function App() {
       </Routes>
       <ClickToTop />
       <Footer />
-      <ReactToastifyContainer />
+      <ReactToastContainer />
     </main>
   );
 }

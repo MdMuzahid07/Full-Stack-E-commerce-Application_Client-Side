@@ -12,7 +12,15 @@ const ProductCard = ({ product, handleAddToCart }) => {
 
     return (
         <section className="card card-compact">
-            <figure className="bg-white border border-2 hover:border-warning rounded-xl"><img src={productImage} alt="Shoes" /></figure>
+            <figure className="bg-white border border-2 hover:border-warning rounded-xl">
+                <img style={
+                    {
+                        maxHeight: "300px",
+                        objectFit: "cover",
+                        objectPosition: "center"
+                    }
+                } src={productImage} alt="Shoes" />
+            </figure>
             <div className="py-4">
                 <h2 className="card-title text-warning">{productName}</h2>
                 <p>{brand}</p>
@@ -22,12 +30,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
                             shopping_cart
                         </span>
                     </button>
-                    <button className="btn btn-outline btn-warning btn-circle mx-5">
-                        <span className="material-symbols-outlined text-black">
-                            favorite
-                        </span>
-                    </button>
-                    <button onClick={() => handleProductDetails(_id)} className="btn btn-outline btn-warning btn-circle">
+                    <button onClick={() => handleProductDetails(_id)} className="btn btn-outline btn-warning btn-circle ml-5">
                         <span className="material-symbols-outlined text-black">
                             visibility
                         </span>

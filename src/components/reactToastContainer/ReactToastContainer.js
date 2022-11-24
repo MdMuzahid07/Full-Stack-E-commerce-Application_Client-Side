@@ -2,7 +2,7 @@ import React from 'react';
 import { Slide, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ReactToastifyContainer = () => {
+const ReactToastContainer = () => {
     return (
         <ToastContainer
             position="top-center"
@@ -20,4 +20,4 @@ const ReactToastifyContainer = () => {
     )
 };
 
-export default ReactToastifyContainer;
+export default ReactToastContainer;

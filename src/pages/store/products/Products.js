@@ -52,8 +52,6 @@ const Products = () => {
                         <option disabled selected>Sort By Latest</option>
                         <option>Sort By Price</option>
                         <option>Sort By Name</option>
-                        <option>Sort By Price</option>
-                        <option>Sort By Viewed</option>
                         <option>Sort By Sell</option>
                     </select>
                 </div>

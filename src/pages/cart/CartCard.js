@@ -48,7 +48,7 @@ const CartCard = () => {
                         $100 USD
                     </div>
                     <button onClick={handleDeleteProduct} className="btn btn-outline btn-circle">
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             delete
                         </span>
                     </button>

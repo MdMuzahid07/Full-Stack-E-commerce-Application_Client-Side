@@ -9,12 +9,24 @@ const Review = () => {
     const handleOnSubmit = async (event) => {
         event.preventDefault();
 
-        console.log(event);
+        const email = await currentUser.email;
+        const name = currentUser.displayName;
+        const avatar = currentUser.photoURL;
+        const review = event.target.message.value;
+        const title = "Kino Customer"
 
 
-        const productData = await {};
+        const productData = {
+            userName: name,
+            userAvatar: avatar,
+            userEmail: email,
+            userReview: review,
+            userTitle: title
+        };
 
-        const url = "";
+        console.log(productData);
+
+        const url = "http://localhost:5000/api/v1/reviews";
 
         fetch(url, {
             method: "POST",
@@ -27,7 +39,7 @@ const Review = () => {
             .then(result => {
                 console.log(result)
                 if (result.success) {
-                    toast.success(`${currentUser?.disPlayName} Thank You!`);
+                    toast.success(`${currentUser?.displayName} Thank You!`);
                 }
             })
 
@@ -51,14 +63,14 @@ const Review = () => {
                     </div>
                     <div className="p-2 md:p-7">
                         <form onSubmit={handleOnSubmit}>
-                            <textarea rows="5" className="textarea textarea-bordered w-full" placeholder="What do you think about our service"></textarea>
-                            <div className="rating mt-3 block">
+                            <textarea type="text" name="message" rows="5" className="textarea textarea-bordered w-full" placeholder="What do you think about our service" />
+                            {/* <div className="rating mt-3 block">
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" checked />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" />
                                 <input type="radio" name="rating-2" className="mask mask-star-2 bg-dark" />
-                            </div>
+                            </div> */}
                             <button type="submit" className="btn btn-outline rounded-xl mt-7">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

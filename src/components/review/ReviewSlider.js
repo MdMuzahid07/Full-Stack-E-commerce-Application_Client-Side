@@ -5,6 +5,9 @@ import Card from './Card';
 
 
 const ReviewSlider = () => {
+
+
+
     var settings = {
         dots: false,
         infinite: true,
