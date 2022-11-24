@@ -1,11 +1,25 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 import Slider from 'react-slick';
+import { toast } from 'react-toastify';
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 import Card from './Card';
 
 
 
 const ReviewSlider = () => {
+    const url = "https://kino-9rm3.onrender.com/api/v1/reviews";
 
+    const { data, isLoading, refetch, error } = useQuery("reviews", () => fetch(url).then(res => res.json())
+    );
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    } else if (!data) {
+        return refetch();
+    } else if (error) {
+        toast.error(error.message)
+    };
 
 
     var settings = {
@@ -50,13 +64,9 @@ const ReviewSlider = () => {
     return (
         <div className="my-20">
             <Slider arrows={false} {...settings}>
-
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-
+                {
+                    data?.data.map(userReview => <Card key={userReview._id} review={userReview} />)
+                }
             </Slider>
         </div>
     );
