@@ -10,7 +10,7 @@ import Card from './Card';
 const ReviewSlider = () => {
     const url = "https://kino-9rm3.onrender.com/api/v1/reviews";
 
-    const { data, isLoading, refetch, error } = useQuery("reviews", () => fetch(url).then(res => res.json())
+    const { data, isLoading, refetch, error } = useQuery("userReview", () => fetch(url).then(res => res.json())
     );
 
     if (isLoading) {

@@ -24,9 +24,7 @@ const Review = () => {
             userTitle: title
         };
 
-        console.log(productData);
-
-        const url = "http://localhost:5000/api/v1/reviews";
+        const url = "https://kino-9rm3.onrender.com/api/v1/reviews";
 
         fetch(url, {
             method: "POST",
