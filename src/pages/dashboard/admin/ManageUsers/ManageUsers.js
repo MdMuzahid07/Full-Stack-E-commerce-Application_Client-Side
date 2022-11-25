@@ -20,8 +20,20 @@ const ManageUsers = () => {
         toast.error(error.message)
     };
 
-    const handleUserDelete = (id) => {
-        window.alert("delete", id);
+    const handleUserDelete = (id, userName) => {
+        const sure = window.confirm("Are you sure?");
+
+        const url = `https://kino-9rm3.onrender.com/api/v1/users/${id}`;
+
+        if (sure) {
+            fetch(url, { method: "DELETE" })
+                .then(res => res.json())
+                .then(data => {
+                    if (data?.success) {
+                        toast.success(`${userName ? userName : "User"} delete successfully`);
+                    }
+                })
+        };
     };
 
     const handleMakeAdmin = (id) => {

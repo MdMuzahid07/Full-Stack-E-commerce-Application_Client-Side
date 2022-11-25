@@ -23,9 +23,9 @@ const User = (props) => {
                 </td>
                 <td className="f-bold">{userRole}</td>
                 <th>
-                    <button onClick={handleUserDelete} className="btn rounded-full btn-xs block">Delete</button>
-                    <button onClick={handleMakeAdmin} className="btn rounded-full btn-xs block  my-2">MakeAdmin</button>
-                    <button onClick={handleMakeSuperAdmin} className="btn rounded-full btn-xs block  my-2">MakeSuperAdmin</button>
+                    <button onClick={() => handleUserDelete(_id, userName)} className="btn rounded-full btn-xs block">Delete</button>
+                    <button onClick={() => handleMakeAdmin(_id)} className="btn rounded-full btn-xs block  my-2">MakeAdmin</button>
+                    <button onClick={() => handleMakeSuperAdmin(_id)} className="btn rounded-full btn-xs block  my-2">MakeSuperAdmin</button>
                 </th>
             </tr>
         </>

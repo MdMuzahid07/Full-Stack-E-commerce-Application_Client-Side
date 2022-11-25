@@ -21,7 +21,6 @@ const ManageProducts = () => {
 
 
     const handleDeleteProduct = (id, productName) => {
-        console.log(id)
         const sure = window.confirm("Are you sure?");
 
         const url = `https://kino-9rm3.onrender.com/api/v1/products/${id}`;
