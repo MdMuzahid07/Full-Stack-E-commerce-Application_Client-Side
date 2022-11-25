@@ -1,6 +1,13 @@
 import React from 'react';
 
-const User = () => {
+const User = (props) => {
+
+    const {
+        handleUserDelete,
+        handleMakeAdmin,
+        handleMakeSuperAdmin
+    } = props;
+
     return (
         <>
             <tr>
@@ -12,9 +19,9 @@ const User = () => {
                 </td>
                 <td className="f-bold">Normal user</td>
                 <th>
-                    <button className="btn rounded-full btn-xs block">Delete</button>
-                    <button className="btn rounded-full btn-xs block  my-2">MakeAdmin</button>
-                    <button className="btn rounded-full btn-xs block  my-2">MakeSuperAdmin</button>
+                    <button onClick={handleUserDelete} className="btn rounded-full btn-xs block">Delete</button>
+                    <button onClick={handleMakeAdmin} className="btn rounded-full btn-xs block  my-2">MakeAdmin</button>
+                    <button onClick={handleMakeSuperAdmin} className="btn rounded-full btn-xs block  my-2">MakeSuperAdmin</button>
                 </th>
             </tr>
         </>

@@ -3,6 +3,20 @@ import HelmetTitle from '../../../../components/helmetTitle/HelmetTitle';
 import User from './User';
 
 const ManageUsers = () => {
+
+    const handleUserDelete = (id) => {
+        window.alert("delete", id);
+    };
+
+    const handleMakeAdmin = (id) => {
+        window.alert("admin", id);
+    };
+
+    const handleMakeSuperAdmin = (id) => {
+        window.alert("super admin", id);
+    };
+
+
     return (
         <section className="my-10">
             <HelmetTitle>Mange Users</HelmetTitle>
@@ -21,7 +35,11 @@ const ManageUsers = () => {
                     </thead>
                     <tbody>
 
-                        <User />
+                        <User
+                            handleUserDelete={handleUserDelete}
+                            handleMakeAdmin={handleMakeAdmin}
+                            handleMakeSuperAdmin={handleMakeSuperAdmin}
+                        />
                         <User />
                         <User />
 
