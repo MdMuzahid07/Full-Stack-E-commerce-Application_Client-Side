@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ product, handleAddToCart }) => {
+const ProductCard = ({ product, setCart }) => {
     const navigate = useNavigate();
 
     const { productName, brand, productImage, _id } = product;
@@ -9,6 +9,11 @@ const ProductCard = ({ product, handleAddToCart }) => {
     const handleProductDetails = (id) => {
         navigate(`/productDetails/${id}`);
     };
+
+
+    const handleAddToCart = (id) => {
+        setCart(id)
+    }
 
     return (
         <section className="card card-compact">

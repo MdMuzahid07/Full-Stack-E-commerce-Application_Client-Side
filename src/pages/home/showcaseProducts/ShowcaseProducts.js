@@ -5,7 +5,7 @@ import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 import ProductCard from './ProductCard';
 
 const ShowcaseProducts = () => {
-    const [cart, handleAddToCart] = useState();
+    const [cart, setCart] = useState([]);
 
     console.log(cart);
 
@@ -31,7 +31,7 @@ const ShowcaseProducts = () => {
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
 
                 {
-                    products?.data?.map((product) => <ProductCard key={product._id} product={product} handleAddToCart={handleAddToCart} />)
+                    products?.data?.map((product) => <ProductCard key={product._id} product={product} setCart={setCart} />)
                 }
 
             </div>
