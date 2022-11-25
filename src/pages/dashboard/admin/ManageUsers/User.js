@@ -5,19 +5,23 @@ const User = (props) => {
     const {
         handleUserDelete,
         handleMakeAdmin,
-        handleMakeSuperAdmin
+        handleMakeSuperAdmin,
+        user
     } = props;
 
+    const { _id, userName, userRole } = user;
+
+    console.log(user);
     return (
         <>
             <tr>
                 <th>
-                    <h2>userId</h2>
+                    <h2>{_id}</h2>
                 </th>
                 <td>
-                    <span>Username</span>
+                    <span>{userName}</span>
                 </td>
-                <td className="f-bold">Normal user</td>
+                <td className="f-bold">{userRole}</td>
                 <th>
                     <button onClick={handleUserDelete} className="btn rounded-full btn-xs block">Delete</button>
                     <button onClick={handleMakeAdmin} className="btn rounded-full btn-xs block  my-2">MakeAdmin</button>

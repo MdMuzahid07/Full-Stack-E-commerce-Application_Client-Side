@@ -1,8 +1,24 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import HelmetTitle from '../../../../components/helmetTitle/HelmetTitle';
+import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner';
 import User from './User';
 
 const ManageUsers = () => {
+
+    const url = "https://kino-9rm3.onrender.com/api/v1/users";
+
+    const { data: users, isLoading, refetch, error } = useQuery("manageUsers", () => fetch(url).then(res => res.json())
+    );
+
+    if (isLoading) {
+        return <LoadingSpinner />
+    } else if (!users) {
+        return refetch();
+    } else if (error) {
+        toast.error(error.message)
+    };
 
     const handleUserDelete = (id) => {
         window.alert("delete", id);
@@ -35,13 +51,15 @@ const ManageUsers = () => {
                     </thead>
                     <tbody>
 
-                        <User
-                            handleUserDelete={handleUserDelete}
-                            handleMakeAdmin={handleMakeAdmin}
-                            handleMakeSuperAdmin={handleMakeSuperAdmin}
-                        />
-                        <User />
-                        <User />
+                        {
+                            users?.data.map((user) => <User
+                                user={user}
+                                key={user._id}
+                                handleUserDelete={handleUserDelete}
+                                handleMakeAdmin={handleMakeAdmin}
+                                handleMakeSuperAdmin={handleMakeSuperAdmin}
+                            />)
+                        }
 
                     </tbody>
                     <tfoot>
