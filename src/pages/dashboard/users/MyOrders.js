@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 
 const MyOrders = () => {
@@ -40,7 +41,7 @@ const MyOrders = () => {
                             <td>Purple</td>
                             <th>
                                 <button className="btn rounded-full btn-xs block">Cancel</button>
-                                <button className="btn rounded-full btn-xs block my-2">Payment</button>
+                                <Link to="/payment" className="btn rounded-full btn-xs block my-2">Payment</Link>
                                 <button className="btn rounded-full btn-xs block">Track</button>
                             </th>
                         </tr>
@@ -68,9 +69,6 @@ const MyOrders = () => {
                                 <button className="btn rounded-full btn-xs block">Track</button>
                             </th>
                         </tr>
-
-
-
 
                         <tr>
                             <th>
