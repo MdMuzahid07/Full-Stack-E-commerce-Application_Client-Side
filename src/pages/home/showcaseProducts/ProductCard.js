@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CART_CONTEXT } from '../../../App';
 
 const ProductCard = ({ product }) => {
     const navigate = useNavigate();
@@ -9,6 +10,10 @@ const ProductCard = ({ product }) => {
     const handleProductDetails = (id) => {
         navigate(`/productDetails/${id}`);
     };
+
+    const { state, dispatch } = useContext(CART_CONTEXT);
+
+    console.log(state);
 
     return (
         <section className="card card-compact">
@@ -25,7 +30,7 @@ const ProductCard = ({ product }) => {
                 <h2 className="card-title text-warning">{productName}</h2>
                 <p>{brand}</p>
                 <div className="flex align-center mt-3">
-                    <button className="btn btn-outline btn-warning btn-circle">
+                    <button onClick={() => dispatch({ type: "AddCart", payload: { _id } })} className="btn btn-outline btn-warning btn-circle">
                         <span className="material-symbols-outlined text-black">
                             shopping_cart
                         </span>
