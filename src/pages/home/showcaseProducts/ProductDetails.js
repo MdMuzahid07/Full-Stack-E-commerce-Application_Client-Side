@@ -28,7 +28,6 @@ const ProductDetails = () => {
 
     const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity, _id } = product?.data;
 
-
     return (
         <section className="px-3 lg:px-0">
             <HelmetTitle>ProductDetails</HelmetTitle>
