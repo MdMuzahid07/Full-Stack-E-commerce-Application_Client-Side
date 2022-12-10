@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 import ProductCard from './ProductCard';
 
 const ShowcaseProducts = () => {
-    const [cart, setCart] = useState([]);
-
-    console.log(cart);
 
     const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("https://kino-9rm3.onrender.com/api/v1/products").then(res => res.json())
     );
@@ -20,7 +17,6 @@ const ShowcaseProducts = () => {
         toast.error(error.message)
     };
 
-
     return (
         <section className="bg-white my-20">
             <span className="font-bold flex align-center"><span className="material-symbols-outlined">
@@ -31,7 +27,7 @@ const ShowcaseProducts = () => {
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
 
                 {
-                    products?.data?.map((product) => <ProductCard key={product._id} product={product} setCart={setCart} />)
+                    products?.data?.map((product) => <ProductCard key={product._id} product={product} />)
                 }
 
             </div>

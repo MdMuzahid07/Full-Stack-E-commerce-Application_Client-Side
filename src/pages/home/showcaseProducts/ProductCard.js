@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ product, setCart }) => {
+const ProductCard = ({ product }) => {
     const navigate = useNavigate();
 
     const { productName, brand, productImage, _id } = product;
@@ -9,11 +9,6 @@ const ProductCard = ({ product, setCart }) => {
     const handleProductDetails = (id) => {
         navigate(`/productDetails/${id}`);
     };
-
-
-    const handleAddToCart = (id) => {
-        setCart(id)
-    }
 
     return (
         <section className="card card-compact">
@@ -30,7 +25,7 @@ const ProductCard = ({ product, setCart }) => {
                 <h2 className="card-title text-warning">{productName}</h2>
                 <p>{brand}</p>
                 <div className="flex align-center mt-3">
-                    <button onClick={() => handleAddToCart(_id)} className="btn btn-outline btn-warning btn-circle">
+                    <button className="btn btn-outline btn-warning btn-circle">
                         <span className="material-symbols-outlined text-black">
                             shopping_cart
                         </span>

@@ -24,6 +24,7 @@ import Payment from "./pages/payment/Payment";
 import Store from "./pages/store/Store";
 import RequireAuth from "./requireauth/RequireAuth";
 
+
 function App() {
   return (
     <main className="max-w-screen-xl mx-auto">
