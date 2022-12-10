@@ -4,9 +4,6 @@ import { signOut } from "firebase/auth";
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import useCurrentUser from '../../hooks/useCurrentUser';
-import { useContext } from 'react';
-import { CART_CONTEXT } from '../../App';
-
 
 const Navbar = () => {
     const { currentUser } = useCurrentUser();
@@ -22,10 +19,6 @@ const Navbar = () => {
             });
         }
     };
-
-    const { state, dispatch } = useContext(CART_CONTEXT);
-
-    console.log("from navbar", state.cart._id)
 
 
     return (

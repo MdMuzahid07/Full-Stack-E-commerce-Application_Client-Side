@@ -1,13 +1,18 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { CART_CONTEXT } from '../../../App';
 import HelmetTitle from '../../../components/helmetTitle/HelmetTitle';
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 
 const ProductDetails = () => {
 
     const { Id } = useParams();
+
+    const { state, dispatch } = useContext(CART_CONTEXT);
+    console.log("from product details", state);
 
     const url = `https://kino-9rm3.onrender.com/api/v1/products/${Id}`
     const { data: product, isLoading, error, refetch } = useQuery("product", () => fetch(url).then(res => res.json())
@@ -21,7 +26,8 @@ const ProductDetails = () => {
         toast.error(error.message)
     };
 
-    const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity } = product?.data;
+    const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity, _id } = product?.data;
+
 
     return (
         <section className="px-3 lg:px-0">
@@ -62,7 +68,7 @@ const ProductDetails = () => {
                         </div >
                     </div >
                     <div className="mt-10">
-                        <button className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
+                        <button onClick={() => dispatch({ type: "AddCart", payload: { _id } })} className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
                             shopping_cart
                         </span>Add Cart</button>
                     </div>
