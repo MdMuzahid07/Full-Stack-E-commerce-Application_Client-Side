@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
+import { CART_CONTEXT } from '../../App';
 
-const CartCard = ({ product }) => {
-    const { productName, price, productImage } = product;
+const CartCard = (props) => {
+    const { productName, price, productImage, _id } = props?.product;
 
     const [quantity, seQuantity] = useState(1)
 
@@ -19,9 +20,9 @@ const CartCard = ({ product }) => {
         }
     };
 
-    const handleDeleteProduct = () => {
-        toast.error("its undergoing development");
-    };
+
+    const { dispatch } = useContext(CART_CONTEXT);
+
 
     return (
         <div>
@@ -49,7 +50,7 @@ const CartCard = ({ product }) => {
                     <div className="p-2">
                         ${price} USD
                     </div>
-                    <button onClick={handleDeleteProduct} className="btn btn-outline btn-circle">
+                    <button onClick={() => dispatch({ type: "RemoveCartProduct", payload: _id })} className="btn btn-outline btn-circle">
                         <span className="material-symbols-outlined">
                             delete
                         </span>

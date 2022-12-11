@@ -41,6 +41,15 @@ function App() {
           ...state,
           cart: [...state.cart, action.payload]
         }
+      case "RemoveCartProduct":
+        const newCart = state?.cart?.filter((product) => product._id !== action.payload);
+
+        console.log("newCart", newCart)
+
+        return {
+          ...state,
+          cart: [...newCart]
+        };
 
       default:
         return state;
@@ -48,6 +57,8 @@ function App() {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(state);
 
   const value = {
     state,
