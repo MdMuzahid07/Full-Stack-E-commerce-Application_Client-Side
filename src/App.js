@@ -54,8 +54,6 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state);
-
   const value = {
     state,
     dispatch,

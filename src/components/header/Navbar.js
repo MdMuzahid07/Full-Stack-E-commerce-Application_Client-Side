@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import useCurrentUser from '../../hooks/useCurrentUser';
 import { useContext } from 'react';
 import { CART_CONTEXT } from '../../App';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const { currentUser } = useCurrentUser();
@@ -49,16 +50,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-bottom dropdown-start md:dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        </label>
-                        <ul tabIndex={0} className="dropdown-content menu w-52 md:w-72 ms-5">
-                            <li>
-                                <input type="text" placeholder="Search" className="input w-full max-w-xl rounded-lg drop-shadow bg-white" />
-                            </li>
-                        </ul>
-                    </div>
+                    <SearchBar />
                     <div>
                         <Link to="/cart" className="btn btn-ghost btn-circle">
                             <div className="indicator">
