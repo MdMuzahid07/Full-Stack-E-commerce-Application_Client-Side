@@ -1,6 +1,8 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { CART_CONTEXT } from '../../App';
 import HelmetTitle from '../../components/helmetTitle/HelmetTitle';
 import CartCard from './CartCard';
 
@@ -12,16 +14,17 @@ const Cart = () => {
         navigate("/address");
     };
 
+    const { state } = useContext(CART_CONTEXT);
+
+
     return (
         <section className="px-3 lg:px-0">
             <HelmetTitle>Cart</HelmetTitle>
             <div className="grid md:grid-cols-2 gap-4 my-10">
                 <div>
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
-                    <CartCard />
+                    {
+                        state?.cart.map((product) => <CartCard key={product?._id} product={product} />)
+                    }
                 </div>
                 <div>
                     <div className="border rounded-xl p-5 md:p-10 sticky top-28">

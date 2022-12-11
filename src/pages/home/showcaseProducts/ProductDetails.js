@@ -26,7 +26,7 @@ const ProductDetails = () => {
         toast.error(error.message)
     };
 
-    const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity, _id } = product?.data;
+    const { productName, brand, description, feature1, feature2, feature3, feature4, feature5, feature6, feature7, minimumOrder, price, productImage, productQuantity } = product?.data;
 
     return (
         <section className="px-3 lg:px-0">
@@ -67,7 +67,7 @@ const ProductDetails = () => {
                         </div >
                     </div >
                     <div className="mt-10">
-                        <button onClick={() => dispatch({ type: "AddCart", payload: { _id } })} className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
+                        <button onClick={() => dispatch({ type: "AddCart", payload: product })} className="btn btn-wide rounded-full"><span className="material-symbols-outlined">
                             shopping_cart
                         </span>Add Cart</button>
                     </div>

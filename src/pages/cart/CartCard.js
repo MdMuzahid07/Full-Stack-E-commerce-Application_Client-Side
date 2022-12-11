@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const CartCard = () => {
+const CartCard = ({ product }) => {
+    const { productName, price, productImage } = product;
+
     const [quantity, seQuantity] = useState(1)
 
 
@@ -27,11 +29,11 @@ const CartCard = () => {
                 <div className="flex">
                     <div className="avatar">
                         <div className="w-24 h-24 border rounded-xl">
-                            <img src="https://placeimg.com/192/192/people" alt="" />
+                            <img src={productImage} alt="product_image" />
                         </div>
                     </div>
                     <div className="p-2">
-                        <p className="font-bold text-warning">Product Name</p>
+                        <p className="font-bold text-warning">{productName}</p>
                         <div className="btn-group mt-2">
                             <button onClick={removeOne} className="btn btn-xs"><span className="material-symbols-outlined">
                                 remove
@@ -45,7 +47,7 @@ const CartCard = () => {
                 </div>
                 <div className="flex justify-between items-center">
                     <div className="p-2">
-                        $100 USD
+                        ${price} USD
                     </div>
                     <button onClick={handleDeleteProduct} className="btn btn-outline btn-circle">
                         <span className="material-symbols-outlined">

@@ -23,9 +23,7 @@ const Navbar = () => {
     };
 
 
-    const { state, dispatch } = useContext(CART_CONTEXT);
-
-    console.log()
+    const { state } = useContext(CART_CONTEXT);
 
 
     return (

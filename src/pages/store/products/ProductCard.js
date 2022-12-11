@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
                 <h2 className="card-title text-warning">{productName}</h2>
                 <p>{brand}</p>
                 <div className="flex align-center mt-3">
-                    <button onClick={() => dispatch({ type: "AddCart", payload: { _id } })} className="btn btn-outline btn-warning btn-circle">
+                    <button onClick={() => dispatch({ type: "AddCart", payload: product })} className="btn btn-outline btn-warning btn-circle">
                         <span className="material-symbols-outlined text-black">
                             shopping_cart
                         </span>
