@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import useCurrentUser from '../../hooks/useCurrentUser';
 import { useContext } from 'react';
 import { CART_CONTEXT } from '../../App';
-import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const { currentUser } = useCurrentUser();
@@ -50,7 +49,6 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <SearchBar />
                     <div>
                         <Link to="/cart" className="btn btn-ghost btn-circle">
                             <div className="indicator">
