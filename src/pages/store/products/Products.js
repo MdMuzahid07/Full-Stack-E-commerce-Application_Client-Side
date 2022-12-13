@@ -7,7 +7,7 @@ import ProductCard from './ProductCard';
 const Products = () => {
     const [query, setQuery] = useState("");
 
-    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("https://kino-9rm3.onrender.com/api/v1/products").then(res => res.json())
+    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("http://localhost:5000/api/v1/products").then(res => res.json())
     );
 
     if (isLoading) {

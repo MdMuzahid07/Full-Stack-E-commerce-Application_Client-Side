@@ -16,7 +16,7 @@ const ManageProductQuantity = ({ product }) => {
             productQuantity: newQuantity
         }
 
-        const url = `https://kino-9rm3.onrender.com/api/v1/products/${_id}`;
+        const url = `http://localhost:5000/api/v1/products/${_id}`;
 
         fetch(url, {
             method: "PATCH",

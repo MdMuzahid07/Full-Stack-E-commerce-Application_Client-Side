@@ -18,7 +18,7 @@ const AddProduct = () => {
             productImage
         };
 
-        const url = "https://kino-9rm3.onrender.com/api/v1/products";
+        const url = "http://localhost:5000/api/v1/products";
 
         fetch(url, {
             method: "POST",
