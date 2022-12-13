@@ -5,7 +5,9 @@ import { CART_CONTEXT } from '../../App';
 const CartCard = (props) => {
     const { productName, price, productImage, _id } = props?.product;
 
-    const [quantity, seQuantity] = useState(1)
+    const [quantity, seQuantity] = useState(1);
+
+    const dynamicPriceCalculate = Number(price) * quantity;
 
 
     const addOne = () => {
@@ -48,7 +50,7 @@ const CartCard = (props) => {
                 </div>
                 <div className="flex justify-between items-center">
                     <div className="p-2">
-                        ${price} USD
+                        ${dynamicPriceCalculate} USD
                     </div>
                     <button onClick={() => dispatch({ type: "RemoveCartProduct", payload: _id })} className="btn btn-outline btn-circle">
                         <span className="material-symbols-outlined">

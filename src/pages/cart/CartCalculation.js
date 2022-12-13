@@ -13,7 +13,6 @@ const CartCalculation = () => {
 
     const { state } = useContext(CART_CONTEXT);
 
-
     let totalPrice = 0;
 
     const cart = state?.cart;

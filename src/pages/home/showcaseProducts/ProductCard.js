@@ -11,9 +11,8 @@ const ProductCard = ({ product }) => {
         navigate(`/productDetails/${id}`);
     };
 
-    const { state, dispatch } = useContext(CART_CONTEXT);
+    const { dispatch } = useContext(CART_CONTEXT);
 
-    console.log(state);
 
     return (
         <section className="card card-compact">
