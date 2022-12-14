@@ -10,7 +10,8 @@ const MyProfile = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
+
+        console.log(data);
     };
     if (errors) {
         toast.error(errors.message);

@@ -6,7 +6,7 @@ import LoadingSpinner from '../../../../components/loadingSpinner/LoadingSpinner
 import ManageProductQuantity from './ManageProductQuantity';
 
 const ManageProducts = () => {
-    const url = "http://localhost:5000/api/v1/products";
+    const url = "https://kino-9rm3.onrender.com/api/v1/products";
 
     const { data: products, isLoading, refetch, error } = useQuery("manageProducts", () => fetch(url).then(res => res.json())
     );
@@ -23,7 +23,7 @@ const ManageProducts = () => {
     const handleDeleteProduct = (id, productName) => {
         const sure = window.confirm("Are you sure?");
 
-        const url = `http://localhost:5000/api/v1/products/${id}`;
+        const url = `https://kino-9rm3.onrender.com/api/v1/products/${id}`;
 
         if (sure) {
             fetch(url, { method: "DELETE" })

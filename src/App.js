@@ -27,7 +27,6 @@ import RequireAuth from "./requireauth/RequireAuth";
 
 export const CART_CONTEXT = createContext();
 
-
 function App() {
 
   const initialState = {

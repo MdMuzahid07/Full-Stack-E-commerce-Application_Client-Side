@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     const [user] = useAuthState(auth);
 
-    const url = "http://localhost:5000/api/v1/users";
+    const url = "https://kino-9rm3.onrender.com/api/v1/users";
 
     const { data: allUsers, isLoading, refetch, error } = useQuery("loggedUser", () => fetch(url).then(res => res.json())
     );
@@ -25,7 +25,6 @@ const Dashboard = () => {
     };
 
     const isValid = allUsers?.data.find((users) => users?.userEmail === user?.email);
-
 
     const isAdmin = isValid?.userRole === "Admin";
 
@@ -47,13 +46,11 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-52 bg-white border-r text-xs font-bold">
                         {/* <!-- Sidebar content here --> */}
                         <li className="bg-white border rounded-xl mb-2">
-                            {
-                                !isAdmin && <Link to="myProfile">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>My Profile
-                                </Link>
-                            }
+                            <Link to="myProfile">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>My Profile
+                            </Link>
                         </li>
                         <li className="bg-white border rounded-xl mb-2">
                             {

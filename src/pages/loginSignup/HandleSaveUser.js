@@ -9,7 +9,7 @@ const HandleSaveUser = async (user) => {
         userRole: "user",
     }
 
-    const url = "http://localhost:5000/api/v1/users";
+    const url = "https://kino-9rm3.onrender.com/api/v1/users";
 
     fetch(url, {
         method: "POST",

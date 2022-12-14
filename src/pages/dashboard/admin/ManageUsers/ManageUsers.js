@@ -7,7 +7,7 @@ import User from './User';
 
 const ManageUsers = () => {
 
-    const url = "http://localhost:5000/api/v1/users";
+    const url = "https://kino-9rm3.onrender.com/api/v1/users";
 
     const { data: users, isLoading, refetch, error } = useQuery("manageUsers", () => fetch(url).then(res => res.json())
     );
@@ -23,7 +23,7 @@ const ManageUsers = () => {
     const handleUserDelete = (id, userName) => {
         const sure = window.confirm("Are you sure?");
 
-        const url = `http://localhost:5000/api/v1/users/${id}`;
+        const url = `https://kino-9rm3.onrender.com/api/v1/users/${id}`;
 
         if (sure) {
             fetch(url, { method: "DELETE" })
