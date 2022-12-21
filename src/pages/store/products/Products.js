@@ -9,7 +9,7 @@ const Products = () => {
     const [page, setPage] = useState(1);
 
 
-    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch(`http://localhost:5000/api/v1/products?page=${page}&limit=8`).then(res => res.json())
+    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch(`https://kino-9rm3.onrender.com/api/v1/products?page=${page}&limit=8`).then(res => res.json())
     );
 
     if (isLoading) {

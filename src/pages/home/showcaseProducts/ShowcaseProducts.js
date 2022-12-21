@@ -3,10 +3,11 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import LoadingSpinner from '../../../components/loadingSpinner/LoadingSpinner';
 import ProductCard from './ProductCard';
+import { Link } from 'react-router-dom';
 
 const ShowcaseProducts = () => {
 
-    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("https://kino-9rm3.onrender.com/api/v1/products").then(res => res.json())
+    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("https://kino-9rm3.onrender.com/api/v1/products?page=1&limit=8").then(res => res.json())
     );
 
     if (isLoading) {
@@ -32,11 +33,11 @@ const ShowcaseProducts = () => {
 
             </div>
             <div className="mt-10 md:sticky md:bottom-10">
-                <button className="btn btn-wide btn-outline btn-warning rounded-full  bg-white">
-                    Load More <span className="material-symbols-outlined ml-2">
+                <Link to="/shop" className="btn btn-outline btn-warning rounded-xl  bg-white">
+                    More Products <span className="material-symbols-outlined ml-2">
                         arrow_forward
                     </span>
-                </button>
+                </Link>
             </div>
         </section>
     );
