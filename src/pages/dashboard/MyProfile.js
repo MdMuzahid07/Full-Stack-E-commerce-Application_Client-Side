@@ -7,12 +7,30 @@ import useCurrentUser from '../../hooks/useCurrentUser';
 const MyProfile = () => {
     const { currentUser } = useCurrentUser();
 
+    console.log(currentUser);
+
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
+        const url = "https://kino-9rm3.onrender.com/api/v1/users";
 
-        console.log(data);
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                if (result.success) {
+                    toast.success(`${data.productName} upload successfully`);
+                }
+            })
+
     };
+
     if (errors) {
         toast.error(errors.message);
     };

@@ -6,8 +6,10 @@ import ProductCard from './ProductCard';
 
 const Products = () => {
     const [query, setQuery] = useState("");
+    const [page, setPage] = useState(1);
 
-    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch("https://kino-9rm3.onrender.com/api/v1/products").then(res => res.json())
+
+    const { data: products, isLoading, refetch, error } = useQuery("products", () => fetch(`http://localhost:5000/api/v1/products?page=${page}&limit=8`).then(res => res.json())
     );
 
     if (isLoading) {
@@ -16,6 +18,20 @@ const Products = () => {
         return refetch();
     } else if (error) {
         toast.error(error.message)
+    };
+
+    const handleBackPage = () => {
+        if (page) {
+            setPage(page - 1);
+        }
+        refetch()
+    };
+
+    const handleNextPage = () => {
+        if (page) {
+            setPage(page + 1);
+        }
+        refetch()
     };
 
 
@@ -82,11 +98,11 @@ const Products = () => {
 
             </div>
             <div className="mt-10 md:sticky md:bottom-10">
-                <button className="btn btn-wide btn-outline btn-warning rounded-full  bg-white">
-                    Load More <span className="material-symbols-outlined ml-2">
-                        arrow_forward
-                    </span>
-                </button>
+                <div className="btn-group">
+                    <button onClick={handleBackPage} className="btn  btn-outline btn-warning rounded-full  bg-white">«</button>
+                    <button className="btn">{page}</button>
+                    <button onClick={handleNextPage} className="btn  btn-outline btn-warning rounded-full  bg-white">»</button>
+                </div>
             </div>
         </section>
     );
